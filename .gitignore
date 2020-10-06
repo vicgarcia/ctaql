@@ -1,0 +1,24 @@
+# virtual environment
+.venv
+
+# environment vars file
+.env
+
+# python cached
+*.pyc
+**/__pycache__/
+**/.pytest_cache/
+
+# local docker postgres contents
+docker/local/postgres/data/*
+
+# IDE-related
+.idea
+.vscode
+
+# junk files
+.DS_Store
+*.swp
+*.tmp
+*.log
+*.backup
