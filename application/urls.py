@@ -10,8 +10,8 @@ urlpatterns = [
     path('health/', core_views.HealthCheckView.as_view()),
 
     # account management endpoints
-    path('account/token/', account_views.LoginView.as_view()),
-    path('account/profile/', account_views.ProfileView.as_view()),
+    path('token/', account_views.LoginView.as_view()),
+    path('profile/', account_views.ProfileView.as_view()),
 
 
 ]

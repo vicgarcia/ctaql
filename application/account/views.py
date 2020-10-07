@@ -28,7 +28,7 @@ class ProfileView(APIView):
     """
         api to manage a user account
 
-        allow user to update email, password, and profile
+        allow user to update email and password
     """
 
     authentication_classes = (JSONWebTokenAuthentication,)

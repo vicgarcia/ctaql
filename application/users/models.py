@@ -6,7 +6,6 @@ from django.utils.timezone import now
 
 
 class UserManager(BaseUserManager):
-
     use_in_migrations = True
 
     def _create_user(self, email, password):
@@ -29,11 +28,9 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractBaseUser):
-
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    name = models.CharField(max_length=250)
     email = postgres.CIEmailField(unique=True)
-    active = models.BooleanField(default=True)
+    is_active = models.BooleanField(default=True)
 
     objects = UserManager()
 

@@ -6,7 +6,7 @@ from users.models import User
 
 class PasswordField(serializers.CharField):
     """
-        customer serializer field with validation for passwords
+        custom serializer field with validation for passwords
         includes validation against django password validation framework
     """
 
@@ -34,6 +34,9 @@ class PasswordField(serializers.CharField):
 
 
 class ProfileSerializer(serializers.ModelSerializer):
+    """
+        serializer for user account management api
+    """
 
     password = PasswordField(required=False)
 
@@ -62,7 +65,6 @@ class ProfileSerializer(serializers.ModelSerializer):
         model = User
         fields = (
             'id',
-            'name',
             'email',
             'password',
         )
