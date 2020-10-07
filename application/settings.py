@@ -21,6 +21,7 @@ class base(configuration):
         'core',
         'users',
         'account',
+        'bustracker',
     ]
 
     MIDDLEWARE = [
@@ -76,6 +77,8 @@ class base(configuration):
         'DEFAULT_RENDERER_CLASSES': ['rest_framework.renderers.JSONRenderer'],
         'DATETIME_FORMAT': "%Y-%m-%d %H:%M:%S",
     }
+
+    CTA_BUSTRACKER_API_KEY = os.environ.get('CTA_BUSTRACKER_API_KEY')
 
 
 class production(base):
