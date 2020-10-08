@@ -20,7 +20,6 @@ class base(configuration):
         #
         'core',
         'users',
-        'account',
         'bustracker',
     ]
 

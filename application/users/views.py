@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from rest_framework.status import HTTP_200_OK, HTTP_400_BAD_REQUEST
 from rest_framework_jwt.views import ObtainJSONWebToken, jwt_response_payload_handler
 from users.models import User
-from users.authentication import JSONWebTokenAuthentication
+from users.authentication import JSONWebTokenAuthentication, IsAuthenticated
 from .serializers import ProfileSerializer
 
 
@@ -12,6 +12,9 @@ class LoginView(ObtainJSONWebToken):
     """
         override the post method of ObtainJSONWebToken to populate the last_login field
     """
+
+    authentication_classes = ()
+    permission_classes = ()
 
     def post(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
@@ -32,7 +35,7 @@ class ProfileView(APIView):
     """
 
     authentication_classes = (JSONWebTokenAuthentication,)
-    permission_classes = ()
+    permission_classes = (IsAuthenticated,)
 
     def get(self, request, *args, **kwargs):
         serializer = ProfileSerializer(instance=request.user)

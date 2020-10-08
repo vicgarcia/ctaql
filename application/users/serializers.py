@@ -6,8 +6,8 @@ from users.models import User
 
 class PasswordField(serializers.CharField):
     """
-        custom serializer field with validation for passwords
-        includes validation against django password validation framework
+        serializer field with validation for password
+        performas validation against django password validation framework
     """
 
     def __init__(self, *args, **kwargs):
