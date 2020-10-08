@@ -1,7 +1,7 @@
 import time
 from django.conf import settings
 from django.core.management.base import BaseCommand, CommandError
-from bustracker.client import BusTrackerApi
+import bustracker.client as cta
 from bustracker.models import Route, Pattern, Stop
 
 
@@ -9,21 +9,22 @@ class Command(BaseCommand):
     help = 'Sync data to local database from CTA Bustracker API'
 
     def handle(self, *args, **options):
-        api = BusTrackerApi(settings.CTA_BUSTRACKER_API_KEY)
 
         # deleting all routes cascades to patterns and stops
         Route.objects.all().delete()
 
         # iterate over routes from the API
-        for r in api.get_routes():
+        for r in cta.get_routes():
             route = Route.objects.create(
                 number=r['rt'],
                 name=r['rtnm'],
             )
 
-            # iterate over patterns for the route from the API
+            # error handling for routes w/o patterns (skip to next route)
             try:
-                for p in api.get_patterns(rt=r['rt']):
+
+                # iterate over patterns for the route from the API
+                for p in cta.get_patterns(rt=r['rt']):
                     pattern = Pattern.objects.create(
                         route=route,
                         number=p['pid'],
@@ -41,7 +42,8 @@ class Command(BaseCommand):
                                 latitude=s['lat'],
                                 longitude=s['lon'],
                             )
-            except Exception as e:
+
+            except cta.BusTrackerException:
                 pass
 
         self.stdout.write('data import complete')
