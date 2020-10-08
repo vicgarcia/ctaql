@@ -77,6 +77,10 @@ class base(configuration):
         'DATETIME_FORMAT': "%Y-%m-%d %H:%M:%S",
     }
 
+    GRAPHENE = {
+        "SCHEMA": "bustracker.schema.schema"
+    }
+
     CTA_BUSTRACKER_API_KEY = os.environ.get('CTA_BUSTRACKER_API_KEY')
 
 
