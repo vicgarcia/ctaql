@@ -9,9 +9,6 @@
 **/__pycache__/
 **/.pytest_cache/
 
-# local docker postgres contents
-docker/postgres/data/*
-
 # IDE-related
 .idea
 .vscode
