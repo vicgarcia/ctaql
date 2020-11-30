@@ -4,6 +4,7 @@ clone the repositry
 
 ```
 git clone git@github.com:vicgarcia/ctaql.git
+cd ctaql
 ```
 
 copy the .env file from the example and add SECRET_KEY and CTA_BUSTRACKER_API_KEY
