@@ -11,37 +11,31 @@ from .functions import (
 )
 
 
-class VehicleType(graphene.ObjectType):
+class RoutesType(graphene.ObjectType):
     number = graphene.String()
-    destination = graphene.String()
-    latitude = graphene.Float()
-    longitude = graphene.Float()
-    heading = graphene.Int()
+    name = graphene.String()
 
     @classmethod
     def from_api_data(cls, data):
-        ''' hydrate a VehicleType with data from the cta api '''
+        ''' hydrate from cta get_routes response '''
         return cls(
-            number=data['vid'],
-            destination=data['des'],
-            latitude=data['lat'],
-            longitude=data['lon'],
-            heading=data['hdg'],
+            number=data['rt'],
+            name=data['rtnm'],
         )
 
 
-class DirectionType(graphene.ObjectType):
+class RouteDirectionType(graphene.ObjectType):
     direction = graphene.String()
 
     @classmethod
     def from_api_data(cls, data):
-        ''' hydrate a DirectionType with data from the cta api '''
+        ''' hydrate from cta get_directions response '''
         return cls(
             direction=data['dir'],
         )
 
 
-class StopType(graphene.ObjectType):
+class RouteStopType(graphene.ObjectType):
     number = graphene.String()
     name = graphene.String()
     direction = graphene.String()
@@ -50,7 +44,7 @@ class StopType(graphene.ObjectType):
 
     @classmethod
     def from_api_data(cls, direction, data):
-        ''' hydrate a StopType with data from cta api '''
+        ''' hydrate from cta get_stops response '''
         return cls(
             number=data['stpid'],
             name=data['stpnm'],
@@ -60,48 +54,45 @@ class StopType(graphene.ObjectType):
         )
 
 
-class RouteType(graphene.ObjectType):
+class RouteVehicleType(graphene.ObjectType):
     number = graphene.String()
-    name = graphene.String()
-    directions = graphene.List(DirectionType)
-    stops = graphene.List(StopType, direction=graphene.String(required=False))
-    vehicles = graphene.List(VehicleType)
+    destination = graphene.String()
+    latitude = graphene.Float()
+    longitude = graphene.Float()
+    heading = graphene.Int()
+
+    @classmethod
+    def from_api_data(cls, data):
+        ''' hydrate from cta get_vehicles response '''
+        return cls(
+            number=data['vid'],
+            destination=data['des'],
+            latitude=data['lat'],
+            longitude=data['lon'],
+            heading=data['hdg'],
+        )
+
+
+class RouteType(RoutesType):
+    directions = graphene.List(RouteDirectionType)
+    stops = graphene.List(RouteStopType, direction=graphene.String(required=False))
+    vehicles = graphene.List(RouteVehicleType)
 
     def resolve_directions(root, info):
         directions = get_directions_by_route(root.number)
-        return [DirectionType.from_api_data(d) for d in directions]
+        return [RouteDirectionType.from_api_data(d) for d in directions]
 
     def resolve_stops(root, info, direction=None):
         directions = get_directions_by_route(root.number)
         stops = []
         for direction in [d['dir'] for d in directions]:
             direction_stops = get_stops_by_route_and_direction(root.number, direction)
-            stops.extend([StopType.from_api_data(direction, s) for s in direction_stops])
+            stops.extend([RouteStopType.from_api_data(direction, s) for s in direction_stops])
         return stops
 
     def resolve_vehicles(root, info):
         vehicles = get_vehicles_by_route(root.number)
-        return [VehicleType.from_api_data(v) for v in vehicles]
-
-    @classmethod
-    def from_api_data(cls, data):
-        return cls(
-            number=data['rt'],
-            name=data['rtnm'],
-        )
-
-
-class RoutesType(graphene.ObjectType):
-    number = graphene.String()
-    name = graphene.String()
-
-    @classmethod
-    def from_api_data(cls, data):
-        ''' hydrate from cta bustracker /getroutes data '''
-        return cls(
-            number=data['rt'],
-            name=data['rtnm'],
-        )
+        return [RouteVehicleType.from_api_data(v) for v in vehicles]
 
 
 class PredictionRouteType(RoutesType):
@@ -113,7 +104,7 @@ class PredictionRouteType(RoutesType):
         return cls.from_api_data(route)
 
 
-class PredictionStopType(graphene.ObjectType):
+class PredictionRouteStopType(graphene.ObjectType):
     number = graphene.String()
     name = graphene.String()
 
@@ -125,7 +116,7 @@ class PredictionStopType(graphene.ObjectType):
         )
 
 
-class PredictionVehicleType(graphene.ObjectType):
+class PredictionRouteVehicleType(graphene.ObjectType):
     number = graphene.String()
     destination = graphene.String()
 
@@ -139,8 +130,8 @@ class PredictionVehicleType(graphene.ObjectType):
 
 class PredictionType(graphene.ObjectType):
     route = graphene.Field(PredictionRouteType)
-    stop = graphene.Field(PredictionStopType)
-    vehicle = graphene.Field(PredictionVehicleType)
+    stop = graphene.Field(PredictionRouteStopType)
+    vehicle = graphene.Field(PredictionRouteVehicleType)
     direction = graphene.String()
     time = graphene.String()
 
@@ -148,8 +139,8 @@ class PredictionType(graphene.ObjectType):
     def from_api_data(cls, data):
         return cls(
             route=PredictionRouteType.from_route_number(data['rt']),
-            stop=PredictionStopType.from_api_data(data),
-            vehicle=PredictionVehicleType.from_api_data(data),
+            stop=PredictionRouteStopType.from_api_data(data),
+            vehicle=PredictionRouteVehicleType.from_api_data(data),
             direction=data['rtdir'],
             time=data['prdtm'],
         )
