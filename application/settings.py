@@ -103,7 +103,4 @@ class development(base):
 
 
 class local(development):
-
-    # when working locally, emails are not sent and outputted to the console
-    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
+    pass
