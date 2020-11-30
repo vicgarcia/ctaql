@@ -2,31 +2,16 @@ version: '3.7'
 
 services:
 
-  ctaql-postgres-local:
-    restart: always
-    image: postgres
-    env_file:
-      - .env
-    volumes:
-      - ./docker/postgres/data:/var/lib/postgresql/data
-    ports:
-      - 5432:5432
-
   ctaql-django-local:
     restart: always
     image: ctaql-django-local
     build:
       context: .
-      dockerfile: ./docker/django/Dockerfile
+      dockerfile: ./docker/Dockerfile
     env_file:
       - .env
     volumes:
       - .:/code
     ports:
       - 8000:8000
-      - 5000:3000
-    links:
-      - ctaql-postgres-local
-    depends_on:
-      - ctaql-postgres-local
-    entrypoint: /code/docker/django/start.sh
+    entrypoint: /code/docker/start.sh

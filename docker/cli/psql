@@ -1,7 +1,0 @@
-#!/bin/sh
-
-# use the psql command line tool to access the postgres docker container
-
-# values from the .env file used w/ django + docker are used here inside the application container
-
-docker-compose exec ctaql-django-local sh -c 'export PGPASSWORD=$POSTGRES_PASSWORD ; psql -h $POSTGRES_HOST -U $POSTGRES_USER $POSTGRES_DB'
