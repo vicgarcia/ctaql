@@ -16,13 +16,10 @@ django-extensions = "*"
 [packages]
 requests = "*"
 gunicorn = "*"
-psycopg2 = "*"
-argon2-cffi = "*"
 django = "*"
 django-configurations = "*"
 django-cors-headers = "*"
 django-rest-framework = "*"
-djangorestframework-jwt = "*"
 graphene-django = "*"
 
 [requires]
