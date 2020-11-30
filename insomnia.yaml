@@ -1,0 +1,512 @@
+_type: export
+__export_format: 4
+__export_date: 2020-11-30T03:46:50.665Z
+__export_source: insomnia.desktop.app:v2020.4.1
+resources:
+  - _id: req_d1cd08b7f6c1431686475143cbe74e7b
+    parentId: fld_a1044a13a03e40df99f62a4ebb50cfc1
+    modified: 1606706670777
+    created: 1606689843931
+    url: "{{ base_url }}/health/"
+    name: health check
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1585215802857.5469
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_a1044a13a03e40df99f62a4ebb50cfc1
+    parentId: wrk_76d2338a4c02404484d990d78c899c8b
+    modified: 1606689766966
+    created: 1606689766966
+    name: django-graphql docker api
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1606689766966
+    _type: request_group
+  - _id: wrk_76d2338a4c02404484d990d78c899c8b
+    parentId: null
+    modified: 1606707012087
+    created: 1601956416277
+    name: ctaql
+    description: ""
+    scope: null
+    _type: workspace
+  - _id: req_0686bd3fd86841c4a5a5df11be1771ee
+    parentId: fld_a1044a13a03e40df99f62a4ebb50cfc1
+    modified: 1606707956534
+    created: 1602035336453
+    url: "{{ base_url }}/graphql/"
+    name: all routes
+    description: ""
+    method: POST
+    body:
+      mimeType: application/graphql
+      text: '{"query":"{\n  routes {\n    number\n    name\n  }\n}\n"}'
+    parameters: []
+    headers:
+      - id: pair_71625be313f14d4f8b78bc950fb53985
+        name: content-type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1585215802807.5469
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_6188dfb58fc04ec6ac2e91bfd250959b
+    parentId: fld_a1044a13a03e40df99f62a4ebb50cfc1
+    modified: 1606706973990
+    created: 1602035974532
+    url: "{{ base_url }}/graphql/"
+    name: route by number
+    description: ""
+    method: POST
+    body:
+      mimeType: application/graphql
+      text: '{"query":"{\n  route(number: \"22\")
+        {\n    number\n    name\n    directions
+        {\n      direction\n    }\n    stops
+        {\n      number\n      name\n      latitude\n      longitude\n      direction\n    }\n    vehicles
+        {\n      number\n      destination\n      heading\n      latitude\n      longitude\n    }\n  }\n}\n"}'
+    parameters: []
+    headers:
+      - id: pair_71625be313f14d4f8b78bc950fb53985
+        name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1585215802757.5469
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_7f0731c8a0a64debb5325c9a2f58aaca
+    parentId: fld_a1044a13a03e40df99f62a4ebb50cfc1
+    modified: 1606707032717
+    created: 1606689877649
+    url: "{{ base_url }}/graphql/"
+    name: route stops by direction
+    description: ""
+    method: POST
+    body:
+      mimeType: application/graphql
+      text: '{"query":"{\n  route(number: \"74\") {\n    stops(direction:
+        \"Westbound\")
+        {\n      number\n      name\n      latitude\n      longitude\n      direction\n    }\n  }\n}\n"}'
+    parameters: []
+    headers:
+      - id: pair_71625be313f14d4f8b78bc950fb53985
+        name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1583828976595.129
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_27a743d7f32344048e3b1707a7a252f4
+    parentId: fld_a1044a13a03e40df99f62a4ebb50cfc1
+    modified: 1606706965862
+    created: 1606695693830
+    url: "{{ base_url }}/graphql/"
+    name: predictions by route and stop
+    description: ""
+    method: POST
+    body:
+      mimeType: application/graphql
+      text: '{"query":"{\n  predictions(route: \"22\", stop: \"1926\") {\n    vehicle
+        {\n      number\n      destination\n    }\n    time\n  }\n}\n"}'
+    parameters: []
+    headers:
+      - id: pair_71625be313f14d4f8b78bc950fb53985
+        name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1583135563489.7012
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_5ca512553f894e6c808a909e8e5552f1
+    parentId: fld_a1044a13a03e40df99f62a4ebb50cfc1
+    modified: 1606706966587
+    created: 1606699367211
+    url: "{{ base_url }}/graphql/"
+    name: predictions by vehicle
+    description: ""
+    method: POST
+    body:
+      mimeType: application/graphql
+      text: '{"query":"{\n  predictions(vehicle: \"1907\") {\n    route
+        {\n      number\n      name\n    }\n    stop
+        {\n      number\n      name\n    }\n    direction\n    time\n  }\n}\n"}'
+    parameters: []
+    headers:
+      - id: pair_71625be313f14d4f8b78bc950fb53985
+        name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1582788856936.9873
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_60ca5fcb1b3b4305a1932c6c669414e3
+    parentId: fld_8c52bc635f204b86aa8fa8cb32c4a998
+    modified: 1606706790152
+    created: 1602394600617
+    url: http://ctabustracker.com/bustime/api/v2/getroutes
+    name: /getroutes
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - description: ""
+        id: pair_a66dad907dd948289adb756ed59a3a58
+        name: format
+        value: json
+      - description: ""
+        id: pair_ade99bd2324b4beca566a4e96a977d10
+        name: key
+        value: "{{ cta_api_key }}"
+      - description: ""
+        disabled: false
+        id: pair_f5fa76f6cf834f228988ffe48751c9af
+        name: rt
+        value: "22"
+      - description: ""
+        disabled: true
+        id: pair_0a0715454f354b8eaad28fa976c20801
+        name: dir
+        value: Southbound
+    headers: []
+    authentication: {}
+    metaSortKey: -1582442150384.2734
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_8c52bc635f204b86aa8fa8cb32c4a998
+    parentId: wrk_76d2338a4c02404484d990d78c899c8b
+    modified: 1606689748442
+    created: 1602394571745
+    name: cta bus tracker api
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1582442150359.2734
+    _type: request_group
+  - _id: req_e467905d6a19431494ad9acdfb4ed2bf
+    parentId: fld_8c52bc635f204b86aa8fa8cb32c4a998
+    modified: 1606706870686
+    created: 1603077889805
+    url: http://ctabustracker.com/bustime/api/v2/getpatterns
+    name: /getpatterns
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - description: ""
+        id: pair_a66dad907dd948289adb756ed59a3a58
+        name: format
+        value: json
+      - description: ""
+        id: pair_ade99bd2324b4beca566a4e96a977d10
+        name: key
+        value: "{{ cta_api_key }}"
+        disabled: false
+      - description: ""
+        disabled: false
+        id: pair_f5fa76f6cf834f228988ffe48751c9af
+        name: rt
+        value: "22"
+    headers: []
+    authentication: {}
+    metaSortKey: -1582442150382.711
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_97ec89fd5d0949739fc5a33f08c4e28e
+    parentId: fld_8c52bc635f204b86aa8fa8cb32c4a998
+    modified: 1606706852111
+    created: 1606664451753
+    url: http://ctabustracker.com/bustime/api/v2/getdirections
+    name: /getdirections
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - description: ""
+        id: pair_a66dad907dd948289adb756ed59a3a58
+        name: format
+        value: json
+      - description: ""
+        id: pair_ade99bd2324b4beca566a4e96a977d10
+        name: key
+        value: "{{ cta_api_key }}"
+      - description: ""
+        disabled: false
+        id: pair_f5fa76f6cf834f228988ffe48751c9af
+        name: rt
+        value: "22"
+    headers: []
+    authentication: {}
+    metaSortKey: -1582442150381.1484
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_5d9cdce683054028a305d73d2be8cba0
+    parentId: fld_8c52bc635f204b86aa8fa8cb32c4a998
+    modified: 1606706942792
+    created: 1602395015643
+    url: http://ctabustracker.com/bustime/api/v2/getstops
+    name: /getstops
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - description: ""
+        id: pair_a66dad907dd948289adb756ed59a3a58
+        name: format
+        value: json
+      - description: ""
+        id: pair_ade99bd2324b4beca566a4e96a977d10
+        name: key
+        value: "{{ cta_api_key }}"
+      - description: ""
+        disabled: false
+        id: pair_f5fa76f6cf834f228988ffe48751c9af
+        name: rt
+        value: "22"
+      - description: ""
+        id: pair_04c16a68c47b4685a0bcaa165edb118e
+        name: dir
+        value: Northbound
+        disabled: false
+      - description: ""
+        disabled: true
+        id: pair_0a0715454f354b8eaad28fa976c20801
+        name: dir
+        value: Southbound
+    headers: []
+    authentication: {}
+    metaSortKey: -1582442150378.0234
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_a8614776e2b14afd924582c6b217aad5
+    parentId: fld_8c52bc635f204b86aa8fa8cb32c4a998
+    modified: 1606706945388
+    created: 1602394700667
+    url: http://ctabustracker.com/bustime/api/v2/getvehicles
+    name: /getvehicles
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - description: ""
+        disabled: false
+        id: pair_a66dad907dd948289adb756ed59a3a58
+        name: format
+        value: json
+      - description: ""
+        disabled: false
+        id: pair_ade99bd2324b4beca566a4e96a977d10
+        name: key
+        value: "{{ cta_api_key }}"
+      - description: ""
+        disabled: false
+        id: pair_f5fa76f6cf834f228988ffe48751c9af
+        name: rt
+        value: "22"
+    headers: []
+    authentication: {}
+    metaSortKey: -1582442150371.7734
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_1f3e915e1d8b4ca6ae46420ed6542723
+    parentId: fld_8c52bc635f204b86aa8fa8cb32c4a998
+    modified: 1606706947669
+    created: 1602394651770
+    url: http://ctabustracker.com/bustime/api/v2/getpredictions
+    name: /getpredictions
+    description: ""
+    method: GET
+    body: {}
+    parameters:
+      - description: ""
+        id: pair_a66dad907dd948289adb756ed59a3a58
+        name: format
+        value: json
+      - description: ""
+        id: pair_ade99bd2324b4beca566a4e96a977d10
+        name: key
+        value: "{{ cta_api_key }}"
+      - description: ""
+        disabled: true
+        id: pair_1fbafcabfa8a4874a47b9b1a996ec1a1
+        name: vid
+        value: "4385"
+      - description: ""
+        disabled: false
+        id: pair_f5fa76f6cf834f228988ffe48751c9af
+        name: rt
+        value: "22"
+      - name: stpid
+        value: "1926"
+        description: ""
+        id: pair_0c6dbd4fc98f4048a8b63a63ca376035
+        disabled: false
+    headers: []
+    authentication: {}
+    metaSortKey: -1582442150359.2734
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_005bd473cd82498183850985b43b2a4f
+    parentId: wrk_76d2338a4c02404484d990d78c899c8b
+    modified: 1601956416286
+    created: 1601956416286
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: null
+    color: null
+    isPrivate: false
+    metaSortKey: 1601751821033
+    _type: environment
+  - _id: jar_7eab1faed670479d80813b44dd529a88
+    parentId: wrk_76d2338a4c02404484d990d78c899c8b
+    modified: 1606707958804
+    created: 1601956416322
+    name: Default Jar
+    cookies:
+      - key: csrftoken
+        value: DVyqxgt39ttdby35RY9L9Kkef9EfwFygX2ELtBQRyVXdjyQCZ7QerQpob7bfw3dG
+        expires: 2021-11-29T03:45:58.000Z
+        maxAge: 31449600
+        domain: 0.0.0.0
+        path: /
+        extensions:
+          - SameSite=Lax
+        hostOnly: true
+        creation: 2020-10-09T01:55:18.337Z
+        lastAccessed: 2020-11-30T03:45:58.804Z
+        id: "7562623275998834"
+      - key: ARPT
+        value: JKQXQLScl-ctabt-7wb02CKYKY
+        domain: ctabustracker.com
+        path: /
+        hostOnly: true
+        creation: 2020-10-11T05:26:18.439Z
+        lastAccessed: 2020-10-11T05:26:18.439Z
+        id: "8343066429779118"
+      - key: JSESSIONID
+        value: 1B88BB4AC84799A5833B338AC2096900
+        domain: ctabustracker.com
+        path: /bustime/
+        httpOnly: true
+        hostOnly: true
+        creation: 2020-10-11T05:26:37.476Z
+        lastAccessed: 2020-11-30T03:28:20.591Z
+        id: "6234896832947465"
+    _type: cookie_jar
+  - _id: spc_ac51eea5f54043d1b7df3ae0419db756
+    parentId: wrk_76d2338a4c02404484d990d78c899c8b
+    modified: 1601956416326
+    created: 1601956416326
+    fileName: process-server
+    contents: ""
+    contentType: yaml
+    _type: api_spec
+  - _id: env_bda8afd1ef894d22a6af48b3e3a6961b
+    parentId: env_005bd473cd82498183850985b43b2a4f
+    modified: 1603075280807
+    created: 1601956416291
+    name: development
+    data:
+      base_url: http://0.0.0.0:8000
+      cta_api_key: ""
+    dataPropertyOrder:
+      "&":
+        - base_url
+        - cta_api_key
+    color: null
+    isPrivate: false
+    metaSortKey: 1601751830051
+    _type: environment
+  - _id: env_cef0f5620d8e4450a27eddc1140b1213
+    parentId: env_005bd473cd82498183850985b43b2a4f
+    modified: 1606706654699
+    created: 1601956416304
+    name: production
+    data:
+      base_url: ""
+      cta_api_key: ""
+    dataPropertyOrder:
+      "&":
+        - base_url
+        - cta_api_key
+    color: null
+    isPrivate: false
+    metaSortKey: 1601751840280
+    _type: environment
