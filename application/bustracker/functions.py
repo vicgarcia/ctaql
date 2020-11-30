@@ -33,11 +33,16 @@ def get_stops_by_route_and_direction(route, direction):
     return stops
 
 
-def get_predictions_by_stop(stop):
-    predictions = cta.get_predictions(stpid=stop)
+def get_predictions_by_route_and_stop(route, stop):
+    predictions = cta.get_predictions(rt=route, stpid=stop)
+    return predictions
+
+
+def get_predictions_by_vehicle(vehicle):
+    predictions = cta.get_predictions(vid=vehicle)
     return predictions
 
 
 def get_vehicles_by_route(route):
-    vehicles = cta.get_vehicles(rt=root.number)
+    vehicles = cta.get_vehicles(rt=route)
     return vehicles
