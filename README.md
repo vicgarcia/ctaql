@@ -20,7 +20,7 @@ build the docker container
 docker-compose build --no-cache
 ```
 
-start the docker containers
+start the docker container
 
 ```
 docker-compose up
