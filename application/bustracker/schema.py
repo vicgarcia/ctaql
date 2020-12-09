@@ -5,8 +5,8 @@ from .functions import (
     get_routes,
     get_directions_by_route,
     get_stops_by_route_and_direction,
-    get_predictions_by_route_and_stop,
     get_predictions_by_vehicle,
+    get_predictions_by_stop,
     get_vehicles_by_route,
 )
 
@@ -151,7 +151,6 @@ class Query(graphene.ObjectType):
     route = graphene.Field(RouteType, number=graphene.String(required=True))
     predictions = graphene.List(PredictionType,
         vehicle=graphene.String(required=False),
-        route=graphene.String(required=False),
         stop=graphene.String(required=False),
     )
 
@@ -165,13 +164,13 @@ class Query(graphene.ObjectType):
         # todo: error handling here
         return RouteType.from_api_data(route)
 
-    def resolve_predictions(root, info, vehicle=None, route=None, stop=None):
+    def resolve_predictions(root, info, vehicle=None, stop=None):
         # todo: error handle + param mixing
         predictions = []
         if vehicle is not None:
             predictions = get_predictions_by_vehicle(vehicle)
         else:
-            predictions = get_predictions_by_route_and_stop(route, stop)
+            predictions = get_predictions_by_stop(stop)
         return [PredictionType.from_api_data(p) for p in predictions]
 
 
