@@ -1,4 +1,6 @@
-ctaql is an experiment with using GraphQL to provide access to data from the [CTA bustracker api](https://www.transitchicago.com/developers/bustracker/). it uses django to provide a graphql api, with the data being retrieve and cached from the CTA's REST api.
+ctaql is an experiment with GraphQL to provide access to the [CTA Bus Tracker API](https://www.transitchicago.com/developers/bustracker/).
+
+it uses Django to retrieve and cache data from the CTA and provide the GraphQL API
 
 clone the repositry
 
@@ -33,8 +35,8 @@ get list of all bus routes
 ```
 {
   routes {
-  	name
-  	number
+    name
+    number
   }
 }
 
