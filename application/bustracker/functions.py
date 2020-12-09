@@ -24,6 +24,15 @@ def get_directions_by_route(route):
     return directions
 
 
+def get_vehicles_by_route(route):
+    key = f'route:{route}:vehicles'
+    vehicles = cache.get(key)
+    if not vehicles:
+        vehicles = cta.get_vehicles(rt=route)
+        cache.set(key, vehicles, 180)
+    return vehicles
+
+
 def get_stops_by_route_and_direction(route, direction):
     key = f'route:{route}:direction:{direction.lower()}:stops'
     stops = cache.get(key)
@@ -34,15 +43,18 @@ def get_stops_by_route_and_direction(route, direction):
 
 
 def get_predictions_by_vehicle(vehicle):
-    predictions = cta.get_predictions(vid=vehicle)
+    key = f'vehicle:{vehicle}:predictions'
+    predictions = cache.get(key)
+    if not predictions:
+        predictions = cta.get_predictions(vid=vehicle)
+        cache.set(key, predictions, 90)
     return predictions
 
 
 def get_predictions_by_stop(stop):
-    predictions = cta.get_predictions(stpid=stop)
+    key = f'stop:{stop}:predictions'
+    predictions = cache.get(key)
+    if not predictions:
+        predictions = cta.get_predictions(stpid=stop)
+        cache.set(key, predictions, 90)
     return predictions
-
-
-def get_vehicles_by_route(route):
-    vehicles = cta.get_vehicles(rt=route)
-    return vehicles
