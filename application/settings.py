@@ -13,7 +13,9 @@ class base(configuration):
     ALLOWED_HOSTS = []
 
     INSTALLED_APPS = [
+        'django.contrib.staticfiles',
         'rest_framework',
+        'graphene_django',
         'bustracker',
     ]
 
@@ -44,6 +46,22 @@ class base(configuration):
     CSRF_USE_SESSIONS = False
 
     CSRF_COOKIE_HTTPONLY = False
+
+    TEMPLATES = [
+        {
+            'BACKEND': 'django.template.backends.django.DjangoTemplates',
+            'DIRS': [],
+            'APP_DIRS': True,
+            'OPTIONS': {
+                'context_processors': [
+                    'django.template.context_processors.debug',
+                    'django.template.context_processors.request',
+                ],
+            },
+        },
+    ]
+
+    STATIC_URL = '/static/'
 
     CACHES = {
         'default': {
