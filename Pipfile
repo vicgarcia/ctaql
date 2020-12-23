@@ -20,6 +20,7 @@ django = "*"
 django-configurations = "*"
 django-cors-headers = "*"
 django-rest-framework = "*"
+django-redis = "*"
 graphene-django = "*"
 
 [requires]
