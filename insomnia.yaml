@@ -1,21 +1,26 @@
 _type: export
 __export_format: 4
-__export_date: 2020-11-30T03:46:50.665Z
-__export_source: insomnia.desktop.app:v2020.4.1
+__export_date: 2020-12-22T23:59:12.494Z
+__export_source: insomnia.desktop.app:v2020.5.2
 resources:
-  - _id: req_d1cd08b7f6c1431686475143cbe74e7b
+  - _id: req_0686bd3fd86841c4a5a5df11be1771ee
     parentId: fld_a1044a13a03e40df99f62a4ebb50cfc1
-    modified: 1606706670777
-    created: 1606689843931
-    url: "{{ base_url }}/health/"
-    name: health check
+    modified: 1608681385932
+    created: 1602035336453
+    url: "{{ base_url }}/"
+    name: all routes
     description: ""
-    method: GET
-    body: {}
+    method: POST
+    body:
+      mimeType: application/graphql
+      text: '{"query":"{\n  routes {\n    number\n    name\n  }\n}\n"}'
     parameters: []
-    headers: []
+    headers:
+      - id: pair_71625be313f14d4f8b78bc950fb53985
+        name: content-type
+        value: application/json
     authentication: {}
-    metaSortKey: -1585215802857.5469
+    metaSortKey: -1585215802807.5469
     isPrivate: false
     settingStoreCookies: true
     settingSendCookies: true
@@ -42,37 +47,11 @@ resources:
     description: ""
     scope: null
     _type: workspace
-  - _id: req_0686bd3fd86841c4a5a5df11be1771ee
-    parentId: fld_a1044a13a03e40df99f62a4ebb50cfc1
-    modified: 1606707956534
-    created: 1602035336453
-    url: "{{ base_url }}/graphql/"
-    name: all routes
-    description: ""
-    method: POST
-    body:
-      mimeType: application/graphql
-      text: '{"query":"{\n  routes {\n    number\n    name\n  }\n}\n"}'
-    parameters: []
-    headers:
-      - id: pair_71625be313f14d4f8b78bc950fb53985
-        name: content-type
-        value: application/json
-    authentication: {}
-    metaSortKey: -1585215802807.5469
-    isPrivate: false
-    settingStoreCookies: true
-    settingSendCookies: true
-    settingDisableRenderRequestBody: false
-    settingEncodeUrl: true
-    settingRebuildPath: true
-    settingFollowRedirects: global
-    _type: request
   - _id: req_6188dfb58fc04ec6ac2e91bfd250959b
     parentId: fld_a1044a13a03e40df99f62a4ebb50cfc1
-    modified: 1606706973990
+    modified: 1608681388047
     created: 1602035974532
-    url: "{{ base_url }}/graphql/"
+    url: "{{ base_url }}/"
     name: route by number
     description: ""
     method: POST
@@ -100,9 +79,9 @@ resources:
     _type: request
   - _id: req_7f0731c8a0a64debb5325c9a2f58aaca
     parentId: fld_a1044a13a03e40df99f62a4ebb50cfc1
-    modified: 1606707032717
+    modified: 1608681393650
     created: 1606689877649
-    url: "{{ base_url }}/graphql/"
+    url: "{{ base_url }}/"
     name: route stops by direction
     description: ""
     method: POST
@@ -126,17 +105,44 @@ resources:
     settingRebuildPath: true
     settingFollowRedirects: global
     _type: request
-  - _id: req_27a743d7f32344048e3b1707a7a252f4
+  - _id: req_001157ac1da54f7695b2b06a7777078b
     parentId: fld_a1044a13a03e40df99f62a4ebb50cfc1
-    modified: 1606706965862
-    created: 1606695693830
-    url: "{{ base_url }}/graphql/"
-    name: predictions by route and stop
+    modified: 1608681413976
+    created: 1606709362282
+    url: "{{ base_url }}/"
+    name: route stops by direction
     description: ""
     method: POST
     body:
       mimeType: application/graphql
-      text: '{"query":"{\n  predictions(route: \"22\", stop: \"1926\") {\n    vehicle
+      text: '{"query":"{\n  route(number: \"74\") {\n    vehicles
+        {\n      number\n      destination\n      heading\n      latitude\n      longitude\n    }\n  }\n}\n"}'
+    parameters: []
+    headers:
+      - id: pair_71625be313f14d4f8b78bc950fb53985
+        name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1583482270042.415
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_27a743d7f32344048e3b1707a7a252f4
+    parentId: fld_a1044a13a03e40df99f62a4ebb50cfc1
+    modified: 1608681503403
+    created: 1606695693830
+    url: "{{ base_url }}/"
+    name: predictions by stop
+    description: ""
+    method: POST
+    body:
+      mimeType: application/graphql
+      text: '{"query":"{\n  arrivals(stop: \"1926\") {\n    vehicle
         {\n      number\n      destination\n    }\n    time\n  }\n}\n"}'
     parameters: []
     headers:
@@ -155,16 +161,15 @@ resources:
     _type: request
   - _id: req_5ca512553f894e6c808a909e8e5552f1
     parentId: fld_a1044a13a03e40df99f62a4ebb50cfc1
-    modified: 1606706966587
+    modified: 1608681508011
     created: 1606699367211
-    url: "{{ base_url }}/graphql/"
+    url: "{{ base_url }}/"
     name: predictions by vehicle
     description: ""
     method: POST
     body:
       mimeType: application/graphql
-      text: '{"query":"{\n  predictions(vehicle: \"1907\") {\n    route
-        {\n      number\n      name\n    }\n    stop
+      text: '{"query":"{\n  arrivals(vehicle: \"1907\") {\n    stop
         {\n      number\n      name\n    }\n    direction\n    time\n  }\n}\n"}'
     parameters: []
     headers:
@@ -436,13 +441,13 @@ resources:
     _type: environment
   - _id: jar_7eab1faed670479d80813b44dd529a88
     parentId: wrk_76d2338a4c02404484d990d78c899c8b
-    modified: 1606707958804
+    modified: 1608681509392
     created: 1601956416322
     name: Default Jar
     cookies:
       - key: csrftoken
         value: DVyqxgt39ttdby35RY9L9Kkef9EfwFygX2ELtBQRyVXdjyQCZ7QerQpob7bfw3dG
-        expires: 2021-11-29T03:45:58.000Z
+        expires: 2021-12-21T23:58:29.000Z
         maxAge: 31449600
         domain: 0.0.0.0
         path: /
@@ -450,8 +455,8 @@ resources:
           - SameSite=Lax
         hostOnly: true
         creation: 2020-10-09T01:55:18.337Z
-        lastAccessed: 2020-11-30T03:45:58.804Z
-        id: "7562623275998834"
+        lastAccessed: 2020-12-22T23:58:29.392Z
+        id: "18581628649790494"
       - key: ARPT
         value: JKQXQLScl-ctabt-7wb02CKYKY
         domain: ctabustracker.com
@@ -459,7 +464,7 @@ resources:
         hostOnly: true
         creation: 2020-10-11T05:26:18.439Z
         lastAccessed: 2020-10-11T05:26:18.439Z
-        id: "8343066429779118"
+        id: "9534494717594759"
       - key: JSESSIONID
         value: 1B88BB4AC84799A5833B338AC2096900
         domain: ctabustracker.com
@@ -468,7 +473,7 @@ resources:
         hostOnly: true
         creation: 2020-10-11T05:26:37.476Z
         lastAccessed: 2020-11-30T03:28:20.591Z
-        id: "6234896832947465"
+        id: "49829037675861043"
     _type: cookie_jar
   - _id: spc_ac51eea5f54043d1b7df3ae0419db756
     parentId: wrk_76d2338a4c02404484d990d78c899c8b
