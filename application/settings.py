@@ -90,6 +90,14 @@ class production(base):
 
     STATIC_ROOT = os.path.join(base.BASE_DIR, 'static')
 
+    CACHES = {
+        "default": {
+            "BACKEND": "django_redis.cache.RedisCache",
+            "LOCATION": "redis://127.0.0.1:6379/2",
+            "KEY_PREFIX": "ctaql",
+        }
+    }
+
 
 class development(base):
 
