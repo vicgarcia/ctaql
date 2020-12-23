@@ -6,6 +6,6 @@ from bustracker.schema import schema
 urlpatterns = [
 
     # graphql endpoint
-    path ('graphql/', GraphQLView.as_view(graphiql=True, schema=schema))
+    path ('', GraphQLView.as_view(graphiql=True, schema=schema))
 
 ]
