@@ -1,7 +1,7 @@
 import graphene
 from graphql import GraphQLError
 from graphene_django import DjangoObjectType, DjangoListField
-from .functions import (
+from .cached import (
     get_routes,
     get_directions_by_route,
     get_stops_by_route_and_direction,
