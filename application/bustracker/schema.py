@@ -213,7 +213,6 @@ class Query(graphene.ObjectType):
         return [ArrivalsType.from_api_data(p) for p in arrivals]
 
     class Meta:
-        description = 'cta bustracker'
-
+        description = 'cta bustracker\n\nhttps://github.com/vicgarcia/ctaql'
 
 schema = graphene.Schema(query=Query)
