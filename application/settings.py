@@ -87,7 +87,8 @@ class base(configuration):
 
 
 class production(base):
-    pass
+
+    STATIC_ROOT = os.path.join(base.BASE_DIR, 'static')
 
 
 class development(base):

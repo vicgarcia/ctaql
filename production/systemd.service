@@ -1,0 +1,14 @@
+[Unit]
+Description=ctaql
+After=network.target
+
+[Service]
+User=ctaql
+Group=www-data
+Restart=on-failure
+WorkingDirectory=/opt/ctaql/application
+ExecStart=pipenv run gunicorn wsgi --bind 127.0.0.1:5010
+StartLimitBurst=0
+
+[Install]
+WantedBy=multi-user.target
