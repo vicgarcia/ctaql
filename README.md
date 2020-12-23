@@ -2,6 +2,8 @@ ctaql is an experiment with GraphQL to provide access to the [CTA Bus Tracker AP
 
 it uses Django to retrieve and cache data from the CTA and provide the GraphQL API
 
+see it in action at [https://ctaql.cc](https://ctaql.cc/#query=%7B%0A%20%20route%28number%3A%20%2276%22%29%20%7B%0A%20%20%20%20number%0A%20%20%20%20name%0A%20%20%20%20directions%20%7B%0A%20%20%20%20%20%20direction%0A%20%20%20%20%7D%0A%20%20%20%20stops%20%7B%0A%20%20%20%20%20%20number%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20latitude%0A%20%20%20%20%20%20longitude%0A%20%20%20%20%20%20direction%0A%20%20%20%20%7D%0A%20%20%20%20vehicles%20%7B%0A%20%20%20%20%20%20number%0A%20%20%20%20%20%20destination%0A%20%20%20%20%20%20heading%0A%20%20%20%20%20%20latitude%0A%20%20%20%20%20%20longitude%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D)
+
 clone the repositry
 
 ```
