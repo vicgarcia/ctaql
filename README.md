@@ -4,6 +4,12 @@ it uses Django to retrieve and cache data from the CTA and provide the GraphQL A
 
 see it in action at [https://ctaql.cc](https://ctaql.cc/#query=%7B%0A%20%20route(number%3A%20%2274%22)%20%7B%0A%20%20%20%20number%0A%20%20%20%20name%0A%20%20%20%20vehicles%20%7B%0A%20%20%20%20%20%20number%0A%20%20%20%20%20%20destination%0A%20%20%20%20%20%20heading%0A%20%20%20%20%20%20latitude%0A%20%20%20%20%20%20longitude%0A%20%20%20%20%7D%20%20%20%20%0A%20%20%20%20directions%20%7B%0A%20%20%20%20%20%20direction%0A%20%20%20%20%7D%0A%20%20%20%20stops%20%7B%0A%20%20%20%20%20%20number%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20latitude%0A%20%20%20%20%20%20longitude%0A%20%20%20%20%20%20direction%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D)
 
+<br />
+
+<br />
+
+## development
+
 clone the repositry
 
 ```
@@ -21,7 +27,7 @@ vim .env
 build the docker container
 
 ```
-docker-compose build --no-cache
+docker-compose build
 ```
 
 start the docker container
