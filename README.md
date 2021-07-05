@@ -6,8 +6,6 @@ see it in action at [https://ctaql.cc](https://ctaql.cc/#query=%7B%0A%20%20route
 
 <br />
 
-### development
-
 clone the repositry
 
 ```
