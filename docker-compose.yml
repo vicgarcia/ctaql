@@ -7,11 +7,12 @@ services:
     image: ctaql-django-local
     build:
       context: .
-      dockerfile: ./docker/Dockerfile
+      dockerfile: ./Dockerfile
+      target: development
     env_file:
       - .env
     volumes:
       - .:/code
     ports:
       - 8000:8000
-    entrypoint: /code/docker/start.sh
+    entrypoint: /start.sh
