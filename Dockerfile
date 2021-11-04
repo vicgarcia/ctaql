@@ -16,17 +16,25 @@ pipenv run python ctaql/debug.py runserver 0.0.0.0:8000\n\
 ' > /start.sh && chmod 777 /start.sh
 
 
-FROM base AS production
+FROM base AS build
 
 RUN mkdir -p /code
 COPY .. /code
 WORKDIR /code
 
+
+FROM build AS test
+
+RUN pipenv install --dev
+
+
+FROM build AS production
+
 RUN pipenv install
 
 RUN echo $'#!/bin/sh\n\
-cd /code/ctaql\n\
-pipenv run gunicorn wsgi --bind 0.0.0.0:8000\n\
+cd /code\n\
+pipenv run gunicorn ctaql.wsgi --bind 0.0.0.0:8000\n\
 ' > /start.sh && chmod 777 /start.sh
 
 CMD [ "/start.sh" ]
