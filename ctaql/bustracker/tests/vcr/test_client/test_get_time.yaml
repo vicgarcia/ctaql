@@ -1,0 +1,24 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.20.1]
+    method: GET
+    uri: http://ctabustracker.com/bustime/api/v2/gettime?format=json&key=CTA-API-KEY
+  response:
+    body: {string: "{\n\t\"bustime-response\": {\n\t\t\"tm\": \"20190514 23:10:26\"\
+        \n\t}\n}"}
+    headers:
+      Content-Length: ['57']
+      Content-Type: [application/json;charset=utf-8]
+      Date: ['Wed, 15 May 2019 04:10:25 GMT']
+      Server: [Apache-Coyote/1.1]
+      Set-Cookie: [ARPT=JKQXQLScl-ctabt-7wb01CKYKW; path=/]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-XSS-Protection: [1; mode=block]
+    status: {code: 200, message: OK}
+version: 1

@@ -1,0 +1,79 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.20.1]
+    method: GET
+    uri: http://ctabustracker.com/bustime/api/v2/getvehicles?format=json&key=CTA-API-KEY&rt=74
+  response:
+    body: {string: "{\n\t\"bustime-response\": {\n\t\t\"vehicle\": [\n\t\t\t{\n\t\t\
+        \t\t\"vid\": \"8146\",\n\t\t\t\t\"tmstmp\": \"20190514 23:09\",\n\t\t\t\t\"\
+        lat\": \"41.925437927246094\",\n\t\t\t\t\"lon\": \"-87.65287017822266\",\n\
+        \t\t\t\t\"hdg\": \"271\",\n\t\t\t\t\"pid\": 8420,\n\t\t\t\t\"rt\": \"74\"\
+        ,\n\t\t\t\t\"des\": \"Grand/Nordica\",\n\t\t\t\t\"pdist\": 906,\n\t\t\t\t\"\
+        dly\": false,\n\t\t\t\t\"tatripid\": \"135\",\n\t\t\t\t\"tablockid\": \"74\
+        \ -858\",\n\t\t\t\t\"zone\": \"\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"vid\": \"\
+        8140\",\n\t\t\t\t\"tmstmp\": \"20190514 23:09\",\n\t\t\t\t\"lat\": \"41.92485559903658\"\
+        ,\n\t\t\t\t\"lon\": \"-87.69886232033754\",\n\t\t\t\t\"hdg\": \"267\",\n\t\
+        \t\t\t\"pid\": 8420,\n\t\t\t\t\"rt\": \"74\",\n\t\t\t\t\"des\": \"Grand/Nordica\"\
+        ,\n\t\t\t\t\"pdist\": 13497,\n\t\t\t\t\"dly\": false,\n\t\t\t\t\"tatripid\"\
+        : \"134\",\n\t\t\t\t\"tablockid\": \"74 -810\",\n\t\t\t\t\"zone\": \"\"\n\t\
+        \t\t},\n\t\t\t{\n\t\t\t\t\"vid\": \"8129\",\n\t\t\t\t\"tmstmp\": \"20190514\
+        \ 23:10\",\n\t\t\t\t\"lat\": \"41.924259185791016\",\n\t\t\t\t\"lon\": \"\
+        -87.75299835205078\",\n\t\t\t\t\"hdg\": \"269\",\n\t\t\t\t\"pid\": 8420,\n\
+        \t\t\t\t\"rt\": \"74\",\n\t\t\t\t\"des\": \"Grand/Nordica\",\n\t\t\t\t\"pdist\"\
+        : 28303,\n\t\t\t\t\"dly\": false,\n\t\t\t\t\"tatripid\": \"150\",\n\t\t\t\t\
+        \"tablockid\": \"74 -856\",\n\t\t\t\t\"zone\": \"\"\n\t\t\t},\n\t\t\t{\n\t\
+        \t\t\t\"vid\": \"8150\",\n\t\t\t\t\"tmstmp\": \"20190514 23:09\",\n\t\t\t\t\
+        \"lat\": \"41.92432403564453\",\n\t\t\t\t\"lon\": \"-87.75131759643554\",\n\
+        \t\t\t\t\"hdg\": \"89\",\n\t\t\t\t\"pid\": 8422,\n\t\t\t\t\"rt\": \"74\",\n\
+        \t\t\t\t\"des\": \"Halsted\",\n\t\t\t\t\"pdist\": 14157,\n\t\t\t\t\"dly\"\
+        : false,\n\t\t\t\t\"tatripid\": \"140\",\n\t\t\t\t\"tablockid\": \"74 -853\"\
+        ,\n\t\t\t\t\"zone\": \"\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"vid\": \"8164\",\n\
+        \t\t\t\t\"tmstmp\": \"20190514 23:10\",\n\t\t\t\t\"lat\": \"41.92505128922001\"\
+        ,\n\t\t\t\t\"lon\": \"-87.6697262179467\",\n\t\t\t\t\"hdg\": \"90\",\n\t\t\
+        \t\t\"pid\": 8422,\n\t\t\t\t\"rt\": \"74\",\n\t\t\t\t\"des\": \"Halsted\"\
+        ,\n\t\t\t\t\"pdist\": 36519,\n\t\t\t\t\"dly\": false,\n\t\t\t\t\"tatripid\"\
+        : \"141\",\n\t\t\t\t\"tablockid\": \"74 -852\",\n\t\t\t\t\"zone\": \"\"\n\t\
+        \t\t}\n\t\t]\n\t}\n}"}
+    headers:
+      Content-Length: ['1582']
+      Content-Type: [application/json;charset=utf-8]
+      Date: ['Wed, 15 May 2019 04:10:25 GMT']
+      Server: [Apache-Coyote/1.1]
+      Set-Cookie: [ARPT=JKQXQLScl-ctabt-7wb01CKYKW; path=/]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-XSS-Protection: [1; mode=block]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.20.1]
+    method: GET
+    uri: http://ctabustracker.com/bustime/api/v2/getvehicles?format=json&key=CTA-API-KEY&tmres=s&vid=8146
+  response:
+    body: {string: "{\n\t\"bustime-response\": {\n\t\t\"vehicle\": [\n\t\t\t{\n\t\t\
+        \t\t\"vid\": \"8146\",\n\t\t\t\t\"tmstmp\": \"20190514 23:09:49\",\n\t\t\t\
+        \t\"lat\": \"41.925437927246094\",\n\t\t\t\t\"lon\": \"-87.65287017822266\"\
+        ,\n\t\t\t\t\"hdg\": \"271\",\n\t\t\t\t\"pid\": 8420,\n\t\t\t\t\"rt\": \"74\"\
+        ,\n\t\t\t\t\"des\": \"Grand/Nordica\",\n\t\t\t\t\"pdist\": 906,\n\t\t\t\t\"\
+        dly\": false,\n\t\t\t\t\"tatripid\": \"135\",\n\t\t\t\t\"tablockid\": \"74\
+        \ -858\",\n\t\t\t\t\"zone\": \"\"\n\t\t\t}\n\t\t]\n\t}\n}"}
+    headers:
+      Content-Length: ['359']
+      Content-Type: [application/json;charset=utf-8]
+      Date: ['Wed, 15 May 2019 04:10:25 GMT']
+      Server: [Apache-Coyote/1.1]
+      Set-Cookie: [ARPT=JKQXQLScl-ctabt-7wb02CKYKY; path=/]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-XSS-Protection: [1; mode=block]
+    status: {code: 200, message: OK}
+version: 1
