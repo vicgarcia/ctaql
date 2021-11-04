@@ -5,7 +5,7 @@ pipeline {
             steps {
                 script {
                     def testImage = docker.build('test-image', '--target test .')
-                    testImage.inside {
+                    testImage.inside('--privileged') {
                         sh 'pwd && cd /code && pipenv run pytest'
                     }
                 }
