@@ -1,15 +1,16 @@
 pipeline {
-    agent {
-        dockerfile {
-            filename 'Dockerfile'
-            additionalBuildArgs  '--target test'
-            args '--user 0:0'
-        }
-    }
+    agent any
     stages {
         stage('Test') {
+            environment {
+                PIPENV_VENV_IN_PROJECT = 1
+            }
             steps {
-                sh 'cd /code && pipenv run pytest'
+                sh """
+                cd /code
+                pipenv install --dev
+                pipenv run pytest
+                """.stripIndent()
             }
         }
     }
