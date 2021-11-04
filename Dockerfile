@@ -19,7 +19,7 @@ pipenv run python ctaql/debug.py runserver 0.0.0.0:8000\n\
 FROM base AS build
 
 RUN mkdir -p /code
-COPY .. /code
+COPY . /code
 WORKDIR /code
 
 
