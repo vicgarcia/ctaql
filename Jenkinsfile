@@ -7,7 +7,6 @@ pipeline {
             }
             steps {
                 sh """
-                cd /code
                 pipenv install --dev
                 pipenv run pytest
                 """.stripIndent()
