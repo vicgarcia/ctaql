@@ -3,6 +3,7 @@ pipeline {
         dockerfile {
             filename 'Dockerfile'
             additionalBuildArgs  '--target build'
+            args '--user 0:0'
         }
     }
     stages {
