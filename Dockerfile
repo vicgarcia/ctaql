@@ -19,6 +19,7 @@ FROM base AS build
 
 ENV PIPENV_VENV_IN_PROJECT 1
 
+RUN pip install pipenv
 RUN mkdir -p /code
 COPY . /code
 WORKDIR /code
@@ -32,7 +33,7 @@ ENV PIPENV_VENV_IN_PROJECT 1
 
 RUN pipenv install --dev
 
-CMD [ "/code/.venv/bin/pytest" ]
+# CMD [ "/code/.venv/bin/pytest" ]
 
 
 FROM build AS prod

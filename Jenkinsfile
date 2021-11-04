@@ -6,10 +6,9 @@ pipeline {
             steps {
                 script {
                     def testImage = docker.build('test-image', '--target test .')
-                    testImage.run()
-                    // testImage.inside('--user 0:0') {
-                    //     sh 'pwd && cd /code && pipenv run pytest'
-                    // }
+                    testImage.inside('--user 0:0') {
+                        sh 'cd /code && pipenv run pytest'
+                    }
                 }
             }
         }
