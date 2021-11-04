@@ -213,6 +213,8 @@ def test_get_service_bulletins(bustracker):
     # make api request with no params
     get_route_service_bulletins = bustracker.get_service_bulletins(rt=FULLERTON_BUS_ROUTE)
 
+    assert isinstance('2', int), \
+           "this is a forced error"
     #  list of elements, , containing expected fields
     assert isinstance(get_route_service_bulletins, list), \
            "api response is not a list of elements"
