@@ -9,6 +9,9 @@ pipeline {
     stages {
         stage('Test') {
             steps {
+                sh 'pwd'
+                sh 'cd /code'
+                sh 'pwd'
                 sh 'pipenv run pytest'
             }
         }
