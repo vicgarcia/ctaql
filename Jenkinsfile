@@ -3,9 +3,11 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                def testImage = docker.build('test-image', '--target test')
-                testImage.inside {
-                    sh 'pwd && cd /code && pipenv run pytest'
+                script {
+                    def testImage = docker.build('test-image', '--target test')
+                    testImage.inside {
+                        sh 'pwd && cd /code && pipenv run pytest'
+                    }
                 }
             }
         }
