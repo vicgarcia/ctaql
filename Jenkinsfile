@@ -9,10 +9,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'pwd'
-                sh 'cd /code'
-                sh 'pwd'
-                sh 'pipenv run pytest'
+                sh 'cd /code && ls && pipenv run pytest'
             }
         }
     }
