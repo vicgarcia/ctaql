@@ -24,6 +24,7 @@ FROM base AS build
 ENV PIPENV_VENV_IN_PROJECT 1
 
 ENV DJANGO_CONFIGURATION production
+ENV DJANGO_SETTINGS_MODULE settings
 
 RUN pip install pipenv
 
