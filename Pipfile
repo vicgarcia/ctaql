@@ -23,6 +23,7 @@ django-rest-framework = "*"
 django-redis = "*"
 graphene-django = "*"
 pytest-vcr = "*"
+whitenoise = "*"
 
 [requires]
 python_version = "3.9"

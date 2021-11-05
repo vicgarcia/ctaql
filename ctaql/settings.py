@@ -90,6 +90,8 @@ class production(base):
 
     STATIC_ROOT = os.path.join(base.BASE_DIR, 'static')
 
+    MIDDLEWARE = [ 'whitenoise.middleware.WhiteNoiseMiddleware' ] + base.MIDDLEWARE
+
     # CACHES = {
     #     "default": {
     #         "BACKEND": "django_redis.cache.RedisCache",
