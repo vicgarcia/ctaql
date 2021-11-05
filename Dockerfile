@@ -23,6 +23,8 @@ FROM base AS build
 
 ENV PIPENV_VENV_IN_PROJECT 1
 
+ENV DJANGO_CONFIGURATION production
+
 RUN pip install pipenv
 
 RUN mkdir -p /code
@@ -36,6 +38,8 @@ RUN pipenv run python ctaql/manage.py collectstatic --noinput
 
 
 FROM build AS test
+
+ENV DJANGO_CONFIGURATION test
 
 RUN pipenv install --dev
 
