@@ -9,20 +9,20 @@ ptvsd = "*"
 pylint = "*"
 pylint-django = "*"
 pytest = "*"
+pytest-vcr = "*"
 pytest-django = "*"
 pytest-pythonpath = "*"
 django-extensions = "*"
 
 [packages]
-requests = "*"
-gunicorn = "*"
 django = "*"
 django-configurations = "*"
 django-cors-headers = "*"
 django-rest-framework = "*"
 django-redis = "*"
 graphene-django = "*"
-pytest-vcr = "*"
+requests = "*"
+gunicorn = "*"
 whitenoise = "*"
 
 [requires]
