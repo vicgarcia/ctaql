@@ -3,16 +3,20 @@ FROM python:3.9 AS base
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-RUN pip install -U pip && pip install pipenv
+RUN pip install -U pip
 
 
-FROM base AS dev
+FROM base AS development
 
-RUN echo $'#!/bin/sh\n\
+RUN pip install pipenv
+
+RUN echo '#!/bin/sh\n\
 cd /code\n\
 pipenv install --dev\n\
 pipenv run python ctaql/debug.py runserver 0.0.0.0:8000\n\
-' > /start.sh && chmod 777 /start.sh
+' > /start.sh && chmod +x /start.sh
+
+CMD [ "/start.sh" ]
 
 
 FROM base AS build
@@ -20,27 +24,28 @@ FROM base AS build
 ENV PIPENV_VENV_IN_PROJECT 1
 
 RUN pip install pipenv
+
 RUN mkdir -p /code
 COPY . /code
+
 WORKDIR /code
 
 RUN pipenv install
 
+RUN pipenv run python ctaql/manage.py collectstatic --noinput
+
 
 FROM build AS test
 
-ENV PIPENV_VENV_IN_PROJECT 1
-
 RUN pipenv install --dev
 
-# CMD [ "/code/.venv/bin/pytest" ]
 
+FROM base AS production
 
-FROM build AS prod
+ENV DJANGO_CONFIGURATION production
 
-RUN echo $'#!/bin/sh\n\
-cd /code\n\
-pipenv run gunicorn ctaql.wsgi --bind 0.0.0.0:8000\n\
-' > /start.sh && chmod 777 /start.sh
+COPY --from=build /code /code
 
-# CMD [ "/start.sh" ]
+WORKDIR /code/ctaql
+
+CMD [ "/code/.venv/bin/gunicorn", "wsgi", "--bind", "0.0.0.0:8000" ]
