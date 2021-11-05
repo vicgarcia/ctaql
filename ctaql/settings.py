@@ -63,6 +63,8 @@ class base(configuration):
 
     STATIC_URL = '/static/'
 
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
     CACHES = {
         'default': {
             'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
@@ -87,8 +89,6 @@ class base(configuration):
 
 
 class production(base):
-
-    STATIC_ROOT = os.path.join(base.BASE_DIR, 'static')
 
     MIDDLEWARE = [ 'whitenoise.middleware.WhiteNoiseMiddleware' ] + base.MIDDLEWARE
 
@@ -121,7 +121,3 @@ class development(base):
             }
         }
     }
-
-
-class local(development):
-    pass
