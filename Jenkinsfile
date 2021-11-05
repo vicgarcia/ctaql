@@ -2,10 +2,10 @@ pipeline {
     agent any
     stages {
 
-        stage('Build Base Container') {
+        stage('Build Container') {
             steps {
                 script {
-                    def baseImage = docker.build('ctaql-base', '--target=base --progress=plain .')
+                    def baseImage = docker.build('ctaql-base', '--target=build --progress=plain .')
                 }
             }
         }
