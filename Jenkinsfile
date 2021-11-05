@@ -16,7 +16,7 @@ pipeline {
         // stage('Push') {
         //     steps {
         //         script {
-        //             def prodImage = docker.build('prod-image', '--target prod')
+        //             def prodImage = docker.build('prod-image', '--target prod .')
         //         }
         //     }
         // }
