@@ -13,7 +13,7 @@ pipeline {
             }
         }
 
-        stage('Deploy Infrastructure') {
+        stage('Update Infrastructure') {
             steps {
                 sh 'echo "todo: terraform here"'
                 sh 'echo "vpc, alb, fargate"'
@@ -22,11 +22,10 @@ pipeline {
 
         stage('Build Containers') {
             steps {
-                sh 'echo "todo: build production container"'
-                sh 'echo "todo: push container to ECR"'
                 script {
-                    def prodImage = docker.build('prod-image', '--target prod .')
+                    def prodImage = docker.build('prod-image', '--target production .')
                 }
+                sh 'echo "todo: push container to ECR"'
             }
         }
 
