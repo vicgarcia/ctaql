@@ -32,6 +32,7 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 RUN pip install pipenv
 
 RUN mkdir -p /app
+
 COPY . /app
 
 WORKDIR /app
