@@ -29,6 +29,10 @@ pipeline {
             steps {
                 script {
                     def prodImage = docker.build('vicg4rcia/ctaql', '--target production --progress=plain .')
+                    docker.withRegistry('', 'docker-hub-user-credentials') {
+                        prodImage.push("$BUILD_NUMBER")
+                        prodImage.push('latest')
+                    }
                 }
                 sh 'echo "todo: push container to docker hub"'
             }
