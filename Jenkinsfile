@@ -9,7 +9,7 @@ pipeline {
         stage('Build Base Container') {
             steps {
                 script {
-                    def buildImage = docker.build('vicg4rcia/ctaql-build', '--target=build --progress=plain .')
+                    def buildImage = docker.build('vicg4rcia/ctaql', '--target=build --progress=plain .')
                 }
             }
         }
@@ -17,7 +17,7 @@ pipeline {
         stage('Run Unit Tests') {
             steps {
                 script {
-                    def testImage = docker.build('vicg4rcia/ctaql-test', '--target=test --progress=plain .')
+                    def testImage = docker.build('vicg4rcia/ctaql', '--target=test --progress=plain .')
                     testImage.inside('--user 0:0') {
                         sh 'cd /app && pipenv run pytest'
                     }
