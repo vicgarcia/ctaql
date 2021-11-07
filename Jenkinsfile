@@ -34,7 +34,7 @@ pipeline {
         }
         stage('Deploy Production Container') {
             steps {
-                sh 'echo "todo: run docker compose w/ host + env vars"'
+                sh 'echo "todo: run docker compose w/ host + env vars stuff"'
             }
         }
     }
