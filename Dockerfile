@@ -33,10 +33,10 @@ ENV DJANGO_CONFIGURATION base
 
 RUN pip install pipenv
 
-RUN mkdir -p /code
-COPY . /code
+RUN mkdir -p /app
+COPY . /app
 
-WORKDIR /code
+WORKDIR /app
 
 RUN pipenv install
 
@@ -66,8 +66,8 @@ ENV PYTHONUNBUFFERED 1
 ENV DJANGO_SETTINGS_MODULE settings
 ENV DJANGO_CONFIGURATION production
 
-COPY --from=build /code /code
+COPY --from=build /app /app
 
-WORKDIR /code/ctaql
+WORKDIR /app/ctaql
 
-CMD [ "/code/.venv/bin/gunicorn", "wsgi", "--bind", "0.0.0.0:8000" ]
+CMD [ "/app/.venv/bin/gunicorn", "wsgi", "--bind", "0.0.0.0:8000" ]
