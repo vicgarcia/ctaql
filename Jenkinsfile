@@ -2,18 +2,18 @@ pipeline {
     agent any
     stages {
 
-        stage('Build Container') {
+        stage('Build Base Container') {
             steps {
                 script {
-                    def baseImage = docker.build('ctaql-base', '--target=build --progress=plain .')
+                    def buildImage = docker.build('vicg4rcia/ctaql-build', '--target=build --progress=plain .')
                 }
             }
         }
 
-        stage('Run Tests') {
+        stage('Run Unit Tests') {
             steps {
                 script {
-                    def testImage = docker.build('test-image', '--target=test --progress=plain .')
+                    def testImage = docker.build('vicg4rcia/ctaql-test', '--target=test --progress=plain .')
                     testImage.inside('--user 0:0') {
                         sh 'cd /code && pipenv run pytest'
                     }
@@ -21,19 +21,18 @@ pipeline {
             }
         }
 
-        stage('Update Infrastructure') {
+        stage('Build Production Container') {
             steps {
-                sh 'echo "todo: terraform here"'
-                sh 'echo "vpc, alb, fargate"'
+                script {
+                    def prodImage = docker.build('vicg4rcia/ctaql', '--target production --progress=plain .')
+                }
+                sh 'echo "todo: push container to docker hub"'
             }
         }
 
-        stage('Build Containers') {
+        stage('Deploy Production Container') {
             steps {
-                script {
-                    def prodImage = docker.build('prod-image', '--target production --progress=plain .')
-                }
-                sh 'echo "todo: push container to ECR"'
+                sh 'echo "todo: run docker compose w/ host + env vars"'
             }
         }
 
