@@ -19,7 +19,7 @@ pipeline {
                 script {
                     def testImage = docker.build('vicg4rcia/ctaql-test', '--target=test --progress=plain .')
                     testImage.inside('--user 0:0') {
-                        sh 'cd /code && pipenv run pytest'
+                        sh 'cd /app && pipenv run pytest'
                     }
                 }
             }
