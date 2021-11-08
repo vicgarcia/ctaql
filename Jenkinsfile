@@ -43,7 +43,7 @@ pipeline {
                 sh '''
                 docker -H $DOCKER_HOST run -d --rm -p 8001:8000 \
                 --env CTA_BUSTRACKER_API_KEY=$CTA_BUSTRACKER_API_KEY \
-                --env DJANGO_SECRET_KEY=$DJANGO_SECRET_KEY
+                --env DJANGO_SECRET_KEY=$DJANGO_SECRET_KEY \
                 --name ctaql vicg4rcia/ctaql
                 '''
             }
