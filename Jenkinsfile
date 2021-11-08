@@ -4,13 +4,13 @@ pipeline {
         ansiColor('xterm')
     }
     stages {
-        stage('Build Base Container') {
-            steps {
-                script {
-                    def buildImage = docker.build('vicg4rcia/ctaql-build', '--target=build --progress=plain .')
-                }
-            }
-        }
+        // stage('Build Base Container') {
+        //     steps {
+        //         script {
+        //             def buildImage = docker.build('vicg4rcia/ctaql-build', '--target=build --progress=plain .')
+        //         }
+        //     }
+        // }
         // stage('Run Unit Tests') {
         //     steps {
         //         script {
@@ -21,17 +21,17 @@ pipeline {
         //         }
         //     }
         // }
-        stage('Build Production Container') {
-            steps {
-                script {
-                    def prodImage = docker.build('vicg4rcia/ctaql', '--target production --progress=plain .')
-                    docker.withRegistry('', 'docker-hub-user-credentials') {
-                        prodImage.push("$BUILD_NUMBER")
-                        prodImage.push('latest')
-                    }
-                }
-            }
-        }
+        // stage('Build Production Container') {
+        //     steps {
+        //         script {
+        //             def prodImage = docker.build('vicg4rcia/ctaql', '--target production --progress=plain .')
+        //             docker.withRegistry('', 'docker-hub-user-credentials') {
+        //                 prodImage.push("$BUILD_NUMBER")
+        //                 prodImage.push('latest')
+        //             }
+        //         }
+        //     }
+        // }
         stage('Deploy Production Container') {
             environment {
                 DOCKER_HOST = credentials('docker-host-ssh-connection-string')
@@ -41,6 +41,7 @@ pipeline {
             steps {
                 sh """
                 docker -H $DOCKER_HOST stop ctaql
+                docker -H $DOCKER_HOST rm ctaql
                 """
                 sh """
                 docker -H $DOCKER_HOST run -p 8001:8000 \
