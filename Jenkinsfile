@@ -43,9 +43,14 @@ pipeline {
                 docker -H $DOCKER_HOST stop ctaql || true
                 '''
                 sh '''
-                docker -H $DOCKER_HOST run -d --rm -p 8001:8000 \
+                docker -H $DOCKER_HOST pull vic4rcia/ctaql:latest
+                '''
+                sh '''
+                docker -H $DOCKER_HOST run -d --rm \
                 --env CTA_BUSTRACKER_API_KEY=$CTA_BUSTRACKER_API_KEY \
                 --env DJANGO_SECRET_KEY=$DJANGO_SECRET_KEY \
+                --publish 8001:8000 \
+                --restart always \
                 --name ctaql vicg4rcia/ctaql:latest
                 '''
             }
