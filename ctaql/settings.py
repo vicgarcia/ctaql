@@ -92,13 +92,13 @@ class production(base):
 
     MIDDLEWARE = [ 'whitenoise.middleware.WhiteNoiseMiddleware' ] + base.MIDDLEWARE
 
-    CACHES = {
-        'default': {
-            'BACKEND': 'django_redis.cache.RedisCache',
-            'LOCATION': os.environ.get('CTAQL_REDIS_CONNECTION'),
-            'KEY_PREFIX': 'ctaql',
-        }
-    }
+    # CACHES = {
+    #     'default': {
+    #         'BACKEND': 'django_redis.cache.RedisCache',
+    #         'LOCATION': os.environ.get('CTAQL_REDIS_CONNECTION'),
+    #         'KEY_PREFIX': 'ctaql',
+    #     }
+    # }
 
 class development(base):
 
