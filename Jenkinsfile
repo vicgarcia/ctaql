@@ -37,19 +37,19 @@ pipeline {
                 DOCKER_HOST = credentials('docker-host-ssh-connection-string')
                 CTA_BUSTRACKER_API_KEY = credentials('ctaql-cta-api-key')
                 DJANGO_SECRET_KEY = credentials('ctaql-django-secret-key')
+                CTAQL_REDIS_CONNECTION = credentials('ctaql-redis-connection-string')
             }
             steps {
                 sh '''
                 docker -H $DOCKER_HOST stop ctaql || true
-                '''
-                sh '''
+                docker -H $DOCKER_HOST rm ctaql || true
                 docker -H $DOCKER_HOST pull vicg4rcia/ctaql:latest
-                '''
-                sh '''
-                docker -H $DOCKER_HOST run -d --rm \
+                docker -H $DOCKER_HOST run -d \
                     --env CTA_BUSTRACKER_API_KEY=$CTA_BUSTRACKER_API_KEY \
                     --env DJANGO_SECRET_KEY=$DJANGO_SECRET_KEY \
+                    --env CTAQL_REDIS_CONNECTION=$CTAQL_REDIS_CONNECTION \
                     --publish 8001:8000 \
+                    --add-host=host.docker.internal:host-gateway \
                     --restart always \
                     --name ctaql vicg4rcia/ctaql:latest
                 '''

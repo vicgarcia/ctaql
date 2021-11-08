@@ -77,12 +77,12 @@ class base(configuration):
         'DEFAULT_PERMISSION_CLASSES': (),
         'DEFAULT_PARSER_CLASSES': ('rest_framework.parsers.JSONParser',),
         'DEFAULT_RENDERER_CLASSES': ('rest_framework.renderers.JSONRenderer',),
-        'DATETIME_FORMAT': "%Y-%m-%d %H:%M:%S",
+        'DATETIME_FORMAT': '%Y-%m-%d %H:%M:%S',
         'UNAUTHENTICATED_USER': None,
     }
 
     GRAPHENE = {
-        "SCHEMA": "bustracker.schema.schema"
+        'SCHEMA': 'bustracker.schema.schema'
     }
 
     CTA_BUSTRACKER_API_KEY = os.environ.get('CTA_BUSTRACKER_API_KEY')
@@ -92,6 +92,13 @@ class production(base):
 
     MIDDLEWARE = [ 'whitenoise.middleware.WhiteNoiseMiddleware' ] + base.MIDDLEWARE
 
+    CACHES = {
+        'default': {
+            'BACKEND': 'django_redis.cache.RedisCache',
+            'LOCATION': os.environ.get('CTAQL_REDIS_CONNECTION'),
+            'KEY_PREFIX': 'ctaql',
+        }
+    }
 
 class development(base):
 
