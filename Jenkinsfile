@@ -43,7 +43,7 @@ pipeline {
                 docker -H $DOCKER_HOST stop ctaql || true
                 '''
                 sh '''
-                docker -H $DOCKER_HOST pull vic4rcia/ctaql:latest
+                docker -H $DOCKER_HOST pull vicg4rcia/ctaql:latest
                 '''
                 sh '''
                 docker -H $DOCKER_HOST run -d --rm \
