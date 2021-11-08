@@ -33,8 +33,19 @@ pipeline {
             }
         }
         stage('Deploy Production Container') {
+            environment {
+                DOCKER_HOST = credentials('docker-host-ssh-connection-string')
+                CTA_BUSTRACKER_API_KEY = credentials('ctaql-cta-api-key')
+                DJANGO_SECRET_KEY = credentials('ctaql-django-secret-key')
+            }
             steps {
-                sh 'echo "todo: run docker compose w/ host + env vars stuff"'
+                sh """
+                docker -H $DOCKER_HOST run
+                -p 8001:8000
+                --env CTA_BUSTRACKER_API_KEY=$CTA_BUSTRACKER_API_KEY
+                --env DJANGO_SECRET_KEY=$DJANGO_SECRET_KEY
+                -d vicg4rcia/ctaql
+                """
             }
         }
     }
