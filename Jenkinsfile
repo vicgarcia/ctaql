@@ -40,10 +40,10 @@ pipeline {
             }
             steps {
                 sh """
-                docker -H $DOCKER_HOST run
-                -p 8001:8000
-                --env CTA_BUSTRACKER_API_KEY=$CTA_BUSTRACKER_API_KEY
-                --env DJANGO_SECRET_KEY=$DJANGO_SECRET_KEY
+                docker -H $DOCKER_HOST run \
+                -p 8001:8000 \
+                --env CTA_BUSTRACKER_API_KEY=$CTA_BUSTRACKER_API_KEY \
+                --env DJANGO_SECRET_KEY=$DJANGO_SECRET_KEY \
                 -d vicg4rcia/ctaql
                 """
             }
