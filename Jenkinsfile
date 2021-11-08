@@ -39,14 +39,12 @@ pipeline {
                 DJANGO_SECRET_KEY = credentials('ctaql-django-secret-key')
             }
             steps {
-                sh "docker -H $DOCKER_HOST stop ctaql"
-                sh "docker -H $DOCKER_HOST rm ctaql"
-                sh """
-                docker -H $DOCKER_HOST run -p 8001:8000 \
+                sh 'docker -H $DOCKER_HOST stop ctaql'
+                sh 'docker -H $DOCKER_HOST rm ctaql'
+                sh 'docker -H $DOCKER_HOST run -p 8001:8000 \
                 --env CTA_BUSTRACKER_API_KEY=$CTA_BUSTRACKER_API_KEY \
                 --env DJANGO_SECRET_KEY=$DJANGO_SECRET_KEY
-                --name ctaql -d vicg4rcia/ctaql:latest
-                """
+                --name ctaql -d vicg4rcia/ctaql:latest'
             }
         }
     }
