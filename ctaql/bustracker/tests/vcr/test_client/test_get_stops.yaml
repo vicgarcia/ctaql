@@ -1,0 +1,166 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.20.1]
+    method: GET
+    uri: http://ctabustracker.com/bustime/api/v2/getstops?dir=Eastbound&format=json&key=CTA-API-KEY&rt=74
+  response:
+    body: {string: "{\n\t\"bustime-response\": {\n\t\t\"stops\": [\n\t\t\t{\n\t\t\t\
+        \t\"stpid\": \"1286\",\n\t\t\t\t\"stpnm\": \"6450 W Fullerton\",\n\t\t\t\t\
+        \"lat\": 41.92364000000054,\n\t\t\t\t\"lon\": -87.78693700000007\n\t\t\t},\n\
+        \t\t\t{\n\t\t\t\t\"stpid\": \"1326\",\n\t\t\t\t\"stpnm\": \"Fullerton & Albany\"\
+        ,\n\t\t\t\t\"lat\": 41.92468200000001,\n\t\t\t\t\"lon\": -87.70484200000035\n\
+        \t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"17254\",\n\t\t\t\t\"stpnm\": \"Fullerton\
+        \ & Ashland\",\n\t\t\t\t\"lat\": 41.925077999998834,\n\t\t\t\t\"lon\": -87.66777500000056\n\
+        \t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"1294\",\n\t\t\t\t\"stpnm\": \"Fullerton\
+        \ & Austin\",\n\t\t\t\t\"lat\": 41.92387800000026,\n\t\t\t\t\"lon\": -87.77598499999891\n\
+        \t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"1329\",\n\t\t\t\t\"stpnm\": \"Fullerton\
+        \ & California\",\n\t\t\t\t\"lat\": 41.92473399999948,\n\t\t\t\t\"lon\": -87.69775299999871\n\
+        \t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"1332\",\n\t\t\t\t\"stpnm\": \"Fullerton\
+        \ & Campbell\",\n\t\t\t\t\"lat\": 41.92480800000081,\n\t\t\t\t\"lon\": -87.69007500000113\n\
+        \t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"14812\",\n\t\t\t\t\"stpnm\": \"Fullerton\
+        \ & Central\",\n\t\t\t\t\"lat\": 41.923887000001,\n\t\t\t\t\"lon\": -87.76563800000066\n\
+        \t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"1320\",\n\t\t\t\t\"stpnm\": \"Fullerton\
+        \ & Central Park\",\n\t\t\t\t\"lat\": 41.924547000000274,\n\t\t\t\t\"lon\"\
+        : -87.7172400000014\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"1306\",\n\t\t\
+        \t\t\"stpnm\": \"Fullerton & Cicero\",\n\t\t\t\t\"lat\": 41.92438700000044,\n\
+        \t\t\t\t\"lon\": -87.74670799999997\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\"\
+        : \"1340\",\n\t\t\t\t\"stpnm\": \"Fullerton & Clybourn\",\n\t\t\t\t\"lat\"\
+        : 41.925037999999994,\n\t\t\t\t\"lon\": -87.66941299999844\n\t\t\t},\n\t\t\
+        \t{\n\t\t\t\t\"stpid\": \"18348\",\n\t\t\t\t\"stpnm\": \"Fullerton & Damen\"\
+        ,\n\t\t\t\t\"lat\": 41.925001999999004,\n\t\t\t\t\"lon\": -87.67748799999913\n\
+        \t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"15516\",\n\t\t\t\t\"stpnm\": \"Fullerton\
+        \ & Grand\",\n\t\t\t\t\"lat\": 41.92356000000021,\n\t\t\t\t\"lon\": -87.79098999999978\n\
+        \t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"18306\",\n\t\t\t\t\"stpnm\": \"Fullerton\
+        \ & Greenview\",\n\t\t\t\t\"lat\": 41.925144000000266,\n\t\t\t\t\"lon\": -87.66552400000018\n\
+        \t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"1224\",\n\t\t\t\t\"stpnm\": \"Fullerton\
+        \ & Halsted\",\n\t\t\t\t\"lat\": 41.9254370000002,\n\t\t\t\t\"lon\": -87.64973499999934\n\
+        \t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"1348\",\n\t\t\t\t\"stpnm\": \"Fullerton\
+        \ & Halsted/Lincoln\",\n\t\t\t\t\"lat\": 41.92537199999971,\n\t\t\t\t\"lon\"\
+        : -87.64893999999946\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"1317\",\n\t\t\
+        \t\t\"stpnm\": \"Fullerton & Hamlin\",\n\t\t\t\t\"lat\": 41.924497999999474,\n\
+        \t\t\t\t\"lon\": -87.72210299999873\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\"\
+        : \"1314\",\n\t\t\t\t\"stpnm\": \"Fullerton & Karlov\",\n\t\t\t\t\"lat\":\
+        \ 41.924418000000315,\n\t\t\t\t\"lon\": -87.72952699999861\n\t\t\t},\n\t\t\
+        \t{\n\t\t\t\t\"stpid\": \"1324\",\n\t\t\t\t\"stpnm\": \"Fullerton & Kedzie\"\
+        ,\n\t\t\t\t\"lat\": 41.92462500000016,\n\t\t\t\t\"lon\": -87.70773499999859\n\
+        \t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"1313\",\n\t\t\t\t\"stpnm\": \"Fullerton\
+        \ & Keeler\",\n\t\t\t\t\"lat\": 41.924417999999854,\n\t\t\t\t\"lon\": -87.73197299999934\n\
+        \t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"1308\",\n\t\t\t\t\"stpnm\": \"Fullerton\
+        \ & Kenton \",\n\t\t\t\t\"lat\": 41.9244099999994,\n\t\t\t\t\"lon\": -87.74130300000003\n\
+        \t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"1309\",\n\t\t\t\t\"stpnm\": \"Fullerton\
+        \ & Kilbourn\",\n\t\t\t\t\"lat\": 41.92445000000039,\n\t\t\t\t\"lon\": -87.7393169999996\n\
+        \t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"1311\",\n\t\t\t\t\"stpnm\": \"Fullerton\
+        \ & Kildare\",\n\t\t\t\t\"lat\": 41.92453799999924,\n\t\t\t\t\"lon\": -87.73440500000123\n\
+        \t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"1307\",\n\t\t\t\t\"stpnm\": \"Fullerton\
+        \ & Kilpatrick\",\n\t\t\t\t\"lat\": 41.92447500000118,\n\t\t\t\t\"lon\": -87.74408500000166\n\
+        \t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"1322\",\n\t\t\t\t\"stpnm\": \"Fullerton\
+        \ & Kimball\",\n\t\t\t\t\"lat\": 41.92459300000086,\n\t\t\t\t\"lon\": -87.71229700000167\n\
+        \t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"1310\",\n\t\t\t\t\"stpnm\": \"Fullerton\
+        \ & Kostner\",\n\t\t\t\t\"lat\": 41.924475000000584,\n\t\t\t\t\"lon\": -87.73686999999856\n\
+        \t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"17923\",\n\t\t\t\t\"stpnm\": \"Fullerton\
+        \ & Lakewood\",\n\t\t\t\t\"lat\": 41.925172999999965,\n\t\t\t\t\"lon\": -87.66101999999954\n\
+        \t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"1305\",\n\t\t\t\t\"stpnm\": \"Fullerton\
+        \ & Lamon\",\n\t\t\t\t\"lat\": 41.92434699999902,\n\t\t\t\t\"lon\": -87.74905999999822\n\
+        \t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"1302\",\n\t\t\t\t\"stpnm\": \"Fullerton\
+        \ & Laramie\",\n\t\t\t\t\"lat\": 41.924236999999586,\n\t\t\t\t\"lon\": -87.75641999999945\n\
+        \t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"1304\",\n\t\t\t\t\"stpnm\": \"Fullerton\
+        \ & Lavergne\",\n\t\t\t\t\"lat\": 41.9243229999989,\n\t\t\t\t\"lon\": -87.75150800000074\n\
+        \t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"1319\",\n\t\t\t\t\"stpnm\": \"Fullerton\
+        \ & Lawndale\",\n\t\t\t\t\"lat\": 41.92453000000121,\n\t\t\t\t\"lon\": -87.71965500000002\n\
+        \t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"1303\",\n\t\t\t\t\"stpnm\": \"Fullerton\
+        \ & Leclaire\",\n\t\t\t\t\"lat\": 41.92431500000071,\n\t\t\t\t\"lon\": -87.75392300000063\n\
+        \t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"1299\",\n\t\t\t\t\"stpnm\": \"Fullerton\
+        \ & Linder\",\n\t\t\t\t\"lat\": 41.92415700000013,\n\t\t\t\t\"lon\": -87.76374699999951\n\
+        \t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"1301\",\n\t\t\t\t\"stpnm\": \"Fullerton\
+        \ & Lockwood\",\n\t\t\t\t\"lat\": 41.92422799999932,\n\t\t\t\t\"lon\": -87.7589319999997\n\
+        \t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"15844\",\n\t\t\t\t\"stpnm\": \"Fullerton\
+        \ & Long\",\n\t\t\t\t\"lat\": 41.923972999999066,\n\t\t\t\t\"lon\": -87.76072699999945\n\
+        \t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"1297\",\n\t\t\t\t\"stpnm\": \"Fullerton\
+        \ & Major\",\n\t\t\t\t\"lat\": 41.92406800000056,\n\t\t\t\t\"lon\": -87.76869000000103\n\
+        \t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"1295\",\n\t\t\t\t\"stpnm\": \"Fullerton\
+        \ & Marmora\",\n\t\t\t\t\"lat\": 41.923965000000685,\n\t\t\t\t\"lon\": -87.77358499999931\n\
+        \t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"1293\",\n\t\t\t\t\"stpnm\": \"Fullerton\
+        \ & Meade\",\n\t\t\t\t\"lat\": 41.92385499999959,\n\t\t\t\t\"lon\": -87.77840200000088\n\
+        \t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"1292\",\n\t\t\t\t\"stpnm\": \"Fullerton\
+        \ & Melvina\",\n\t\t\t\t\"lat\": 41.923798000000666,\n\t\t\t\t\"lon\": -87.78080200000062\n\
+        \t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"1296\",\n\t\t\t\t\"stpnm\": \"Fullerton\
+        \ & Menard\",\n\t\t\t\t\"lat\": 41.924012999998666,\n\t\t\t\t\"lon\": -87.77116999999981\n\
+        \t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"14590\",\n\t\t\t\t\"stpnm\": \"Fullerton\
+        \ & Milwaukee\",\n\t\t\t\t\"lat\": 41.92471599999891,\n\t\t\t\t\"lon\": -87.69979200000071\n\
+        \t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"1291\",\n\t\t\t\t\"stpnm\": \"Fullerton\
+        \ & Mobile\",\n\t\t\t\t\"lat\": 41.92377500000014,\n\t\t\t\t\"lon\": -87.78326500000082\n\
+        \t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"15257\",\n\t\t\t\t\"stpnm\": \"Fullerton\
+        \ & Narragansett\",\n\t\t\t\t\"lat\": 41.92357699999875,\n\t\t\t\t\"lon\"\
+        : -87.78569699999893\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"1334\",\n\t\t\
+        \t\t\"stpnm\": \"Fullerton & Oakley\",\n\t\t\t\t\"lat\": 41.924872000000775,\n\
+        \t\t\t\t\"lon\": -87.68535500000158\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\"\
+        : \"1315\",\n\t\t\t\t\"stpnm\": \"Fullerton & Pulaski\",\n\t\t\t\t\"lat\"\
+        : 41.924417999998646,\n\t\t\t\t\"lon\": -87.72702999999983\n\t\t\t},\n\t\t\
+        \t{\n\t\t\t\t\"stpid\": \"1345\",\n\t\t\t\t\"stpnm\": \"Fullerton & Racine\"\
+        ,\n\t\t\t\t\"lat\": 41.9251980000009,\n\t\t\t\t\"lon\": -87.65866800000082\n\
+        \t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"18088\",\n\t\t\t\t\"stpnm\": \"Fullerton\
+        \ & Rockwell\",\n\t\t\t\t\"lat\": 41.92479100000087,\n\t\t\t\t\"lon\": -87.6926769999988\n\
+        \t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"1327\",\n\t\t\t\t\"stpnm\": \"Fullerton\
+        \ & Sacramento\",\n\t\t\t\t\"lat\": 41.92470499999928,\n\t\t\t\t\"lon\": -87.70252200000151\n\
+        \t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"1346\",\n\t\t\t\t\"stpnm\": \"Fullerton\
+        \ & Seminary\",\n\t\t\t\t\"lat\": 41.92526199999876,\n\t\t\t\t\"lon\": -87.65591799999855\n\
+        \t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"6597\",\n\t\t\t\t\"stpnm\": \"Fullerton\
+        \ & Sheffield (Red/Brown/Purple Line)\",\n\t\t\t\t\"lat\": 41.925293000000835,\n\
+        \t\t\t\t\"lon\": -87.6531369999982\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\":\
+        \ \"18305\",\n\t\t\t\t\"stpnm\": \"Fullerton & Southport\",\n\t\t\t\t\"lat\"\
+        : 41.92518499999927,\n\t\t\t\t\"lon\": -87.66298900000147\n\t\t\t},\n\t\t\t\
+        {\n\t\t\t\t\"stpid\": \"1323\",\n\t\t\t\t\"stpnm\": \"Fullerton & Spaulding\"\
+        ,\n\t\t\t\t\"lat\": 41.92462500000116,\n\t\t\t\t\"lon\": -87.71070699999885\n\
+        \t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"1316\",\n\t\t\t\t\"stpnm\": \"Fullerton\
+        \ & Springfield\",\n\t\t\t\t\"lat\": 41.92447499999939,\n\t\t\t\t\"lon\":\
+        \ -87.72451800000151\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"1321\",\n\t\t\
+        \t\t\"stpnm\": \"Fullerton & St. Louis\",\n\t\t\t\t\"lat\": 41.92460200000046,\n\
+        \t\t\t\t\"lon\": -87.7139500000013\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\":\
+        \ \"1312\",\n\t\t\t\t\"stpnm\": \"Fullerton & Tripp\",\n\t\t\t\t\"lat\": 41.92444999999953,\n\
+        \t\t\t\t\"lon\": -87.73321299999914\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\"\
+        : \"1330\",\n\t\t\t\t\"stpnm\": \"Fullerton & Washtenaw\",\n\t\t\t\t\"lat\"\
+        : 41.92476799999873,\n\t\t\t\t\"lon\": -87.6952879999992\n\t\t\t},\n\t\t\t\
+        {\n\t\t\t\t\"stpid\": \"1333\",\n\t\t\t\t\"stpnm\": \"Fullerton & Western\"\
+        ,\n\t\t\t\t\"lat\": 41.92481699999923,\n\t\t\t\t\"lon\": -87.6878180000017\n\
+        \t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"1339\",\n\t\t\t\t\"stpnm\": \"Fullerton\
+        \ & Wood\",\n\t\t\t\t\"lat\": 41.925006999999155,\n\t\t\t\t\"lon\": -87.6726719999991\n\
+        \t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"671\",\n\t\t\t\t\"stpnm\": \"Grand\
+        \ & Newcastle \",\n\t\t\t\t\"lat\": 41.923616999999794,\n\t\t\t\t\"lon\":\
+        \ -87.79726800000054\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"670\",\n\t\t\
+        \t\t\"stpnm\": \"Grand & Newland\",\n\t\t\t\t\"lat\": 41.923568000000145,\n\
+        \t\t\t\t\"lon\": -87.79922300000064\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\"\
+        : \"668\",\n\t\t\t\t\"stpnm\": \"Grand & Nordica Terminal\",\n\t\t\t\t\"lat\"\
+        : 41.923830000000216,\n\t\t\t\t\"lon\": -87.8015769999986\n\t\t\t},\n\t\t\t\
+        {\n\t\t\t\t\"stpid\": \"17567\",\n\t\t\t\t\"stpnm\": \"Grand & Normandy\"\
+        ,\n\t\t\t\t\"lat\": 41.923592000000085,\n\t\t\t\t\"lon\": -87.79191200000174\n\
+        \t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"672\",\n\t\t\t\t\"stpnm\": \"Grand\
+        \ & Oak Park\",\n\t\t\t\t\"lat\": 41.92362300000077,\n\t\t\t\t\"lon\": -87.7955829999986\n\
+        \t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"669\",\n\t\t\t\t\"stpnm\": \"Grand\
+        \ & Sayre\",\n\t\t\t\t\"lat\": 41.923519999999954,\n\t\t\t\t\"lon\": -87.80094000000146\n\
+        \t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"1349\",\n\t\t\t\t\"stpnm\": \"Halsted\
+        \ & Belden\",\n\t\t\t\t\"lat\": 41.92377499999884,\n\t\t\t\t\"lon\": -87.64873300000163\n\
+        \t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"1353\",\n\t\t\t\t\"stpnm\": \"Lincoln\
+        \ & Belden/Orchard\",\n\t\t\t\t\"lat\": 41.92352000000063,\n\t\t\t\t\"lon\"\
+        : -87.64592000000114\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\": \"1352\",\n\t\t\
+        \t\t\"stpnm\": \"Lincoln & Webster\",\n\t\t\t\t\"lat\": 41.92216199999883,\n\
+        \t\t\t\t\"lon\": -87.64412500000037\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\"\
+        : \"1350\",\n\t\t\t\t\"stpnm\": \"Webster & Halsted\",\n\t\t\t\t\"lat\": 41.92176500000045,\n\
+        \t\t\t\t\"lon\": -87.64825699999986\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"stpid\"\
+        : \"1351\",\n\t\t\t\t\"stpnm\": \"Webster & Orchard\",\n\t\t\t\t\"lat\": 41.92177999999992,\n\
+        \t\t\t\t\"lon\": -87.6463820000013\n\t\t\t}\n\t\t]\n\t}\n}"}
+    headers:
+      Content-Type: [application/json;charset=utf-8]
+      Date: ['Wed, 15 May 2019 04:10:26 GMT']
+      Server: [Apache-Coyote/1.1]
+      Set-Cookie: [ARPT=JKQXQLScl-ctabt-7wb01CKYKW; path=/]
+      Transfer-Encoding: [chunked]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-XSS-Protection: [1; mode=block]
+    status: {code: 200, message: OK}
+version: 1

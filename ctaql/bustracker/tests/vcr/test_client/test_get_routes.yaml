@@ -1,0 +1,256 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.20.1]
+    method: GET
+    uri: http://ctabustracker.com/bustime/api/v2/getroutes?format=json&key=CTA-API-KEY
+  response:
+    body: {string: "{\n\t\"bustime-response\": {\n\t\t\"routes\": [\n\t\t\t{\n\t\t\
+        \t\t\"rt\": \"1\",\n\t\t\t\t\"rtnm\": \"Bronzeville/Union Station\",\n\t\t\
+        \t\t\"rtclr\": \"#336633\",\n\t\t\t\t\"rtdd\": \"1\"\n\t\t\t},\n\t\t\t{\n\t\
+        \t\t\t\"rt\": \"2\",\n\t\t\t\t\"rtnm\": \"Hyde Park Express\",\n\t\t\t\t\"\
+        rtclr\": \"#993366\",\n\t\t\t\t\"rtdd\": \"2\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\
+        \"rt\": \"3\",\n\t\t\t\t\"rtnm\": \"King Drive\",\n\t\t\t\t\"rtclr\": \"#009900\"\
+        ,\n\t\t\t\t\"rtdd\": \"3\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"4\",\n\t\t\
+        \t\t\"rtnm\": \"Cottage Grove\",\n\t\t\t\t\"rtclr\": \"#cc3300\",\n\t\t\t\t\
+        \"rtdd\": \"4\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"5\",\n\t\t\t\t\"rtnm\"\
+        : \"South Shore Night Bus\",\n\t\t\t\t\"rtclr\": \"#996633\",\n\t\t\t\t\"\
+        rtdd\": \"5\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"6\",\n\t\t\t\t\"rtnm\"\
+        : \"Jackson Park Express\",\n\t\t\t\t\"rtclr\": \"#ff0066\",\n\t\t\t\t\"rtdd\"\
+        : \"6\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"7\",\n\t\t\t\t\"rtnm\": \"Harrison\"\
+        ,\n\t\t\t\t\"rtclr\": \"#666600\",\n\t\t\t\t\"rtdd\": \"7\"\n\t\t\t},\n\t\t\
+        \t{\n\t\t\t\t\"rt\": \"8\",\n\t\t\t\t\"rtnm\": \"Halsted\",\n\t\t\t\t\"rtclr\"\
+        : \"#ff00ff\",\n\t\t\t\t\"rtdd\": \"8\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\"\
+        : \"8A\",\n\t\t\t\t\"rtnm\": \"South Halsted\",\n\t\t\t\t\"rtclr\": \"#66cc66\"\
+        ,\n\t\t\t\t\"rtdd\": \"8A\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"9\",\n\t\
+        \t\t\t\"rtnm\": \"Ashland\",\n\t\t\t\t\"rtclr\": \"#cc3366\",\n\t\t\t\t\"\
+        rtdd\": \"9\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"X9\",\n\t\t\t\t\"rtnm\"\
+        : \"Ashland Express\",\n\t\t\t\t\"rtclr\": \"#33ff00\",\n\t\t\t\t\"rtdd\"\
+        : \"X9\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"11\",\n\t\t\t\t\"rtnm\": \"\
+        Lincoln\",\n\t\t\t\t\"rtclr\": \"#ff6600\",\n\t\t\t\t\"rtdd\": \"11\"\n\t\t\
+        \t},\n\t\t\t{\n\t\t\t\t\"rt\": \"12\",\n\t\t\t\t\"rtnm\": \"Roosevelt\",\n\
+        \t\t\t\t\"rtclr\": \"#33ccff\",\n\t\t\t\t\"rtdd\": \"12\"\n\t\t\t},\n\t\t\t\
+        {\n\t\t\t\t\"rt\": \"J14\",\n\t\t\t\t\"rtnm\": \"Jeffery Jump\",\n\t\t\t\t\
+        \"rtclr\": \"#663399\",\n\t\t\t\t\"rtdd\": \"J14\"\n\t\t\t},\n\t\t\t{\n\t\t\
+        \t\t\"rt\": \"15\",\n\t\t\t\t\"rtnm\": \"Jeffery Local\",\n\t\t\t\t\"rtclr\"\
+        : \"#ff9999\",\n\t\t\t\t\"rtdd\": \"15\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\"\
+        : \"18\",\n\t\t\t\t\"rtnm\": \"16th/18th\",\n\t\t\t\t\"rtclr\": \"#6699ff\"\
+        ,\n\t\t\t\t\"rtdd\": \"18\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"19\",\n\t\
+        \t\t\t\"rtnm\": \"United Center Express\",\n\t\t\t\t\"rtclr\": \"#78aa50\"\
+        ,\n\t\t\t\t\"rtdd\": \"19\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"20\",\n\t\
+        \t\t\t\"rtnm\": \"Madison\",\n\t\t\t\t\"rtclr\": \"#336633\",\n\t\t\t\t\"\
+        rtdd\": \"20\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"21\",\n\t\t\t\t\"rtnm\"\
+        : \"Cermak\",\n\t\t\t\t\"rtclr\": \"#009900\",\n\t\t\t\t\"rtdd\": \"21\"\n\
+        \t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"22\",\n\t\t\t\t\"rtnm\": \"Clark\",\n\
+        \t\t\t\t\"rtclr\": \"#cc3300\",\n\t\t\t\t\"rtdd\": \"22\"\n\t\t\t},\n\t\t\t\
+        {\n\t\t\t\t\"rt\": \"24\",\n\t\t\t\t\"rtnm\": \"Wentworth\",\n\t\t\t\t\"rtclr\"\
+        : \"#9900cc\",\n\t\t\t\t\"rtdd\": \"24\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\"\
+        : \"26\",\n\t\t\t\t\"rtnm\": \"South Shore Express\",\n\t\t\t\t\"rtclr\":\
+        \ \"#006666\",\n\t\t\t\t\"rtdd\": \"26\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\"\
+        : \"28\",\n\t\t\t\t\"rtnm\": \"Stony Island\",\n\t\t\t\t\"rtclr\": \"#996633\"\
+        ,\n\t\t\t\t\"rtdd\": \"28\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"29\",\n\t\
+        \t\t\t\"rtnm\": \"State\",\n\t\t\t\t\"rtclr\": \"#666600\",\n\t\t\t\t\"rtdd\"\
+        : \"29\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"30\",\n\t\t\t\t\"rtnm\": \"\
+        South Chicago\",\n\t\t\t\t\"rtclr\": \"#ff00ff\",\n\t\t\t\t\"rtdd\": \"30\"\
+        \n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"31\",\n\t\t\t\t\"rtnm\": \"31st\",\n\
+        \t\t\t\t\"rtclr\": \"#00ffff\",\n\t\t\t\t\"rtdd\": \"31\"\n\t\t\t},\n\t\t\t\
+        {\n\t\t\t\t\"rt\": \"34\",\n\t\t\t\t\"rtnm\": \"South Michigan\",\n\t\t\t\t\
+        \"rtclr\": \"#cc3366\",\n\t\t\t\t\"rtdd\": \"34\"\n\t\t\t},\n\t\t\t{\n\t\t\
+        \t\t\"rt\": \"35\",\n\t\t\t\t\"rtnm\": \"31st/35th\",\n\t\t\t\t\"rtclr\":\
+        \ \"#33ff00\",\n\t\t\t\t\"rtdd\": \"35\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\"\
+        : \"36\",\n\t\t\t\t\"rtnm\": \"Broadway\",\n\t\t\t\t\"rtclr\": \"#cc66ff\"\
+        ,\n\t\t\t\t\"rtdd\": \"36\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"37\",\n\t\
+        \t\t\t\"rtnm\": \"Sedgwick\",\n\t\t\t\t\"rtclr\": \"#993366\",\n\t\t\t\t\"\
+        rtdd\": \"37\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"39\",\n\t\t\t\t\"rtnm\"\
+        : \"Pershing\",\n\t\t\t\t\"rtclr\": \"#33ccff\",\n\t\t\t\t\"rtdd\": \"39\"\
+        \n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"43\",\n\t\t\t\t\"rtnm\": \"43rd\",\n\
+        \t\t\t\t\"rtclr\": \"#cc9966\",\n\t\t\t\t\"rtdd\": \"43\"\n\t\t\t},\n\t\t\t\
+        {\n\t\t\t\t\"rt\": \"44\",\n\t\t\t\t\"rtnm\": \"Wallace-Racine\",\n\t\t\t\t\
+        \"rtclr\": \"#ff9999\",\n\t\t\t\t\"rtdd\": \"44\"\n\t\t\t},\n\t\t\t{\n\t\t\
+        \t\t\"rt\": \"47\",\n\t\t\t\t\"rtnm\": \"47th\",\n\t\t\t\t\"rtclr\": \"#99cc33\"\
+        ,\n\t\t\t\t\"rtdd\": \"47\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"48\",\n\t\
+        \t\t\t\"rtnm\": \"South Damen\",\n\t\t\t\t\"rtclr\": \"#6699ff\",\n\t\t\t\t\
+        \"rtdd\": \"48\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"49\",\n\t\t\t\t\"rtnm\"\
+        : \"Western\",\n\t\t\t\t\"rtclr\": \"#336633\",\n\t\t\t\t\"rtdd\": \"49\"\n\
+        \t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"49B\",\n\t\t\t\t\"rtnm\": \"North Western\"\
+        ,\n\t\t\t\t\"rtclr\": \"#009900\",\n\t\t\t\t\"rtdd\": \"49B\"\n\t\t\t},\n\t\
+        \t\t{\n\t\t\t\t\"rt\": \"X49\",\n\t\t\t\t\"rtnm\": \"Western Express\",\n\t\
+        \t\t\t\"rtclr\": \"#9900cc\",\n\t\t\t\t\"rtdd\": \"X49\"\n\t\t\t},\n\t\t\t\
+        {\n\t\t\t\t\"rt\": \"50\",\n\t\t\t\t\"rtnm\": \"Damen\",\n\t\t\t\t\"rtclr\"\
+        : \"#cc3300\",\n\t\t\t\t\"rtdd\": \"50\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\"\
+        : \"51\",\n\t\t\t\t\"rtnm\": \"51st\",\n\t\t\t\t\"rtclr\": \"#006666\",\n\t\
+        \t\t\t\"rtdd\": \"51\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"52\",\n\t\t\t\
+        \t\"rtnm\": \"Kedzie/California\",\n\t\t\t\t\"rtclr\": \"#996633\",\n\t\t\t\
+        \t\"rtdd\": \"52\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"52A\",\n\t\t\t\t\"\
+        rtnm\": \"South Kedzie\",\n\t\t\t\t\"rtclr\": \"#ff0066\",\n\t\t\t\t\"rtdd\"\
+        : \"52A\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"53\",\n\t\t\t\t\"rtnm\": \"\
+        Pulaski\",\n\t\t\t\t\"rtclr\": \"#666600\",\n\t\t\t\t\"rtdd\": \"53\"\n\t\t\
+        \t},\n\t\t\t{\n\t\t\t\t\"rt\": \"53A\",\n\t\t\t\t\"rtnm\": \"South Pulaski\"\
+        ,\n\t\t\t\t\"rtclr\": \"#ff00ff\",\n\t\t\t\t\"rtdd\": \"53A\"\n\t\t\t},\n\t\
+        \t\t{\n\t\t\t\t\"rt\": \"54\",\n\t\t\t\t\"rtnm\": \"Cicero\",\n\t\t\t\t\"\
+        rtclr\": \"#cc3366\",\n\t\t\t\t\"rtdd\": \"54\"\n\t\t\t},\n\t\t\t{\n\t\t\t\
+        \t\"rt\": \"54A\",\n\t\t\t\t\"rtnm\": \"North Cicero/Skokie Blvd.\",\n\t\t\
+        \t\t\"rtclr\": \"#33ff00\",\n\t\t\t\t\"rtdd\": \"54A\"\n\t\t\t},\n\t\t\t{\n\
+        \t\t\t\t\"rt\": \"54B\",\n\t\t\t\t\"rtnm\": \"South Cicero\",\n\t\t\t\t\"\
+        rtclr\": \"#cc66ff\",\n\t\t\t\t\"rtdd\": \"54B\"\n\t\t\t},\n\t\t\t{\n\t\t\t\
+        \t\"rt\": \"55\",\n\t\t\t\t\"rtnm\": \"Garfield\",\n\t\t\t\t\"rtclr\": \"\
+        #33ccff\",\n\t\t\t\t\"rtdd\": \"55\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"\
+        55A\",\n\t\t\t\t\"rtnm\": \"55th/Austin\",\n\t\t\t\t\"rtclr\": \"#cc9966\"\
+        ,\n\t\t\t\t\"rtdd\": \"55A\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"55N\",\n\
+        \t\t\t\t\"rtnm\": \"55th/Narragansett\",\n\t\t\t\t\"rtclr\": \"#ff9999\",\n\
+        \t\t\t\t\"rtdd\": \"55N\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"56\",\n\t\t\
+        \t\t\"rtnm\": \"Milwaukee\",\n\t\t\t\t\"rtclr\": \"#6699ff\",\n\t\t\t\t\"\
+        rtdd\": \"56\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"57\",\n\t\t\t\t\"rtnm\"\
+        : \"Laramie\",\n\t\t\t\t\"rtclr\": \"#993366\",\n\t\t\t\t\"rtdd\": \"57\"\n\
+        \t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"59\",\n\t\t\t\t\"rtnm\": \"59th/61st\"\
+        ,\n\t\t\t\t\"rtclr\": \"#009900\",\n\t\t\t\t\"rtdd\": \"59\"\n\t\t\t},\n\t\
+        \t\t{\n\t\t\t\t\"rt\": \"60\",\n\t\t\t\t\"rtnm\": \"Blue Island/26th\",\n\t\
+        \t\t\t\"rtclr\": \"#9900cc\",\n\t\t\t\t\"rtdd\": \"60\"\n\t\t\t},\n\t\t\t\
+        {\n\t\t\t\t\"rt\": \"62\",\n\t\t\t\t\"rtnm\": \"Archer\",\n\t\t\t\t\"rtclr\"\
+        : \"#cc3300\",\n\t\t\t\t\"rtdd\": \"62\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\"\
+        : \"62H\",\n\t\t\t\t\"rtnm\": \"Archer/Harlem\",\n\t\t\t\t\"rtclr\": \"#006666\"\
+        ,\n\t\t\t\t\"rtdd\": \"62H\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"63\",\n\
+        \t\t\t\t\"rtnm\": \"63rd\",\n\t\t\t\t\"rtclr\": \"#996633\",\n\t\t\t\t\"rtdd\"\
+        : \"63\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"63W\",\n\t\t\t\t\"rtnm\": \"\
+        West 63rd\",\n\t\t\t\t\"rtclr\": \"#ff0066\",\n\t\t\t\t\"rtdd\": \"63W\"\n\
+        \t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"65\",\n\t\t\t\t\"rtnm\": \"Grand\",\n\
+        \t\t\t\t\"rtclr\": \"#ff00ff\",\n\t\t\t\t\"rtdd\": \"65\"\n\t\t\t},\n\t\t\t\
+        {\n\t\t\t\t\"rt\": \"66\",\n\t\t\t\t\"rtnm\": \"Chicago\",\n\t\t\t\t\"rtclr\"\
+        : \"#66cc66\",\n\t\t\t\t\"rtdd\": \"66\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\"\
+        : \"67\",\n\t\t\t\t\"rtnm\": \"67th-69th-71st\",\n\t\t\t\t\"rtclr\": \"#cc3366\"\
+        ,\n\t\t\t\t\"rtdd\": \"67\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"68\",\n\t\
+        \t\t\t\"rtnm\": \"Northwest Highway\",\n\t\t\t\t\"rtclr\": \"#33ff00\",\n\t\
+        \t\t\t\"rtdd\": \"68\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"70\",\n\t\t\t\
+        \t\"rtnm\": \"Division\",\n\t\t\t\t\"rtclr\": \"#ff6600\",\n\t\t\t\t\"rtdd\"\
+        : \"70\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"71\",\n\t\t\t\t\"rtnm\": \"\
+        71st/South Shore\",\n\t\t\t\t\"rtclr\": \"#33ccff\",\n\t\t\t\t\"rtdd\": \"\
+        71\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"72\",\n\t\t\t\t\"rtnm\": \"North\"\
+        ,\n\t\t\t\t\"rtclr\": \"#cc9966\",\n\t\t\t\t\"rtdd\": \"72\"\n\t\t\t},\n\t\
+        \t\t{\n\t\t\t\t\"rt\": \"73\",\n\t\t\t\t\"rtnm\": \"Armitage\",\n\t\t\t\t\"\
+        rtclr\": \"#ff9999\",\n\t\t\t\t\"rtdd\": \"73\"\n\t\t\t},\n\t\t\t{\n\t\t\t\
+        \t\"rt\": \"74\",\n\t\t\t\t\"rtnm\": \"Fullerton\",\n\t\t\t\t\"rtclr\": \"\
+        #99cc33\",\n\t\t\t\t\"rtdd\": \"74\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"\
+        75\",\n\t\t\t\t\"rtnm\": \"74th-75th\",\n\t\t\t\t\"rtclr\": \"#6699ff\",\n\
+        \t\t\t\t\"rtdd\": \"75\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"76\",\n\t\t\
+        \t\t\"rtnm\": \"Diversey\",\n\t\t\t\t\"rtclr\": \"#336633\",\n\t\t\t\t\"rtdd\"\
+        : \"76\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"77\",\n\t\t\t\t\"rtnm\": \"\
+        Belmont\",\n\t\t\t\t\"rtclr\": \"#993366\",\n\t\t\t\t\"rtdd\": \"77\"\n\t\t\
+        \t},\n\t\t\t{\n\t\t\t\t\"rt\": \"78\",\n\t\t\t\t\"rtnm\": \"Montrose\",\n\t\
+        \t\t\t\"rtclr\": \"#009900\",\n\t\t\t\t\"rtdd\": \"78\"\n\t\t\t},\n\t\t\t\
+        {\n\t\t\t\t\"rt\": \"79\",\n\t\t\t\t\"rtnm\": \"79th\",\n\t\t\t\t\"rtclr\"\
+        : \"#9900cc\",\n\t\t\t\t\"rtdd\": \"79\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\"\
+        : \"80\",\n\t\t\t\t\"rtnm\": \"Irving Park\",\n\t\t\t\t\"rtclr\": \"#cc3300\"\
+        ,\n\t\t\t\t\"rtdd\": \"80\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"81\",\n\t\
+        \t\t\t\"rtnm\": \"Lawrence\",\n\t\t\t\t\"rtclr\": \"#996633\",\n\t\t\t\t\"\
+        rtdd\": \"81\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"81W\",\n\t\t\t\t\"rtnm\"\
+        : \"West Lawrence\",\n\t\t\t\t\"rtclr\": \"#ff0066\",\n\t\t\t\t\"rtdd\": \"\
+        81W\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"82\",\n\t\t\t\t\"rtnm\": \"Kimball-Homan\"\
+        ,\n\t\t\t\t\"rtclr\": \"#666600\",\n\t\t\t\t\"rtdd\": \"82\"\n\t\t\t},\n\t\
+        \t\t{\n\t\t\t\t\"rt\": \"84\",\n\t\t\t\t\"rtnm\": \"Peterson\",\n\t\t\t\t\"\
+        rtclr\": \"#ff00ff\",\n\t\t\t\t\"rtdd\": \"84\"\n\t\t\t},\n\t\t\t{\n\t\t\t\
+        \t\"rt\": \"85\",\n\t\t\t\t\"rtnm\": \"Central\",\n\t\t\t\t\"rtclr\": \"#66cc66\"\
+        ,\n\t\t\t\t\"rtdd\": \"85\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"85A\",\n\
+        \t\t\t\t\"rtnm\": \"North Central\",\n\t\t\t\t\"rtclr\": \"#cc3366\",\n\t\t\
+        \t\t\"rtdd\": \"85A\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"86\",\n\t\t\t\t\
+        \"rtnm\": \"Narragansett/Ridgeland\",\n\t\t\t\t\"rtclr\": \"#33ff00\",\n\t\
+        \t\t\t\"rtdd\": \"86\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"87\",\n\t\t\t\
+        \t\"rtnm\": \"87th\",\n\t\t\t\t\"rtclr\": \"#cc66ff\",\n\t\t\t\t\"rtdd\":\
+        \ \"87\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"88\",\n\t\t\t\t\"rtnm\": \"\
+        Higgins\",\n\t\t\t\t\"rtclr\": \"#ff6600\",\n\t\t\t\t\"rtdd\": \"88\"\n\t\t\
+        \t},\n\t\t\t{\n\t\t\t\t\"rt\": \"90\",\n\t\t\t\t\"rtnm\": \"Harlem\",\n\t\t\
+        \t\t\"rtclr\": \"#33ccff\",\n\t\t\t\t\"rtdd\": \"90\"\n\t\t\t},\n\t\t\t{\n\
+        \t\t\t\t\"rt\": \"91\",\n\t\t\t\t\"rtnm\": \"Austin\",\n\t\t\t\t\"rtclr\"\
+        : \"#ff9999\",\n\t\t\t\t\"rtdd\": \"91\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\"\
+        : \"92\",\n\t\t\t\t\"rtnm\": \"Foster\",\n\t\t\t\t\"rtclr\": \"#99cc33\",\n\
+        \t\t\t\t\"rtdd\": \"92\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"93\",\n\t\t\
+        \t\t\"rtnm\": \"California/Dodge\",\n\t\t\t\t\"rtclr\": \"#6699ff\",\n\t\t\
+        \t\t\"rtdd\": \"93\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"94\",\n\t\t\t\t\
+        \"rtnm\": \"South California\",\n\t\t\t\t\"rtclr\": \"#336633\",\n\t\t\t\t\
+        \"rtdd\": \"94\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"95\",\n\t\t\t\t\"rtnm\"\
+        : \"95th\",\n\t\t\t\t\"rtclr\": \"#00ffff\",\n\t\t\t\t\"rtdd\": \"95\"\n\t\
+        \t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"96\",\n\t\t\t\t\"rtnm\": \"Lunt\",\n\t\t\
+        \t\t\"rtclr\": \"#9900cc\",\n\t\t\t\t\"rtdd\": \"96\"\n\t\t\t},\n\t\t\t{\n\
+        \t\t\t\t\"rt\": \"97\",\n\t\t\t\t\"rtnm\": \"Skokie\",\n\t\t\t\t\"rtclr\"\
+        : \"#cc3300\",\n\t\t\t\t\"rtdd\": \"97\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\"\
+        : \"X98\",\n\t\t\t\t\"rtnm\": \"Avon Express\",\n\t\t\t\t\"rtclr\": \"#006666\"\
+        ,\n\t\t\t\t\"rtdd\": \"X98\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"100\",\n\
+        \t\t\t\t\"rtnm\": \"Jeffery Manor Express\",\n\t\t\t\t\"rtclr\": \"#996633\"\
+        ,\n\t\t\t\t\"rtdd\": \"100\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"103\",\n\
+        \t\t\t\t\"rtnm\": \"West 103rd\",\n\t\t\t\t\"rtclr\": \"#ff0066\",\n\t\t\t\
+        \t\"rtdd\": \"103\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"106\",\n\t\t\t\t\
+        \"rtnm\": \"East 103rd\",\n\t\t\t\t\"rtclr\": \"#666600\",\n\t\t\t\t\"rtdd\"\
+        : \"106\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"108\",\n\t\t\t\t\"rtnm\":\
+        \ \"Halsted/95th\",\n\t\t\t\t\"rtclr\": \"#ff00ff\",\n\t\t\t\t\"rtdd\": \"\
+        108\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"111\",\n\t\t\t\t\"rtnm\": \"111th/King\
+        \ Drive\",\n\t\t\t\t\"rtclr\": \"#66cc66\",\n\t\t\t\t\"rtdd\": \"111\"\n\t\
+        \t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"111A\",\n\t\t\t\t\"rtnm\": \"Pullman Shuttle\"\
+        ,\n\t\t\t\t\"rtclr\": \"#ff3333\",\n\t\t\t\t\"rtdd\": \"111A\"\n\t\t\t},\n\
+        \t\t\t{\n\t\t\t\t\"rt\": \"112\",\n\t\t\t\t\"rtnm\": \"Vincennes/111th\",\n\
+        \t\t\t\t\"rtclr\": \"#cc3366\",\n\t\t\t\t\"rtdd\": \"112\"\n\t\t\t},\n\t\t\
+        \t{\n\t\t\t\t\"rt\": \"115\",\n\t\t\t\t\"rtnm\": \"Pullman/115th\",\n\t\t\t\
+        \t\"rtclr\": \"#996633\",\n\t\t\t\t\"rtdd\": \"115\"\n\t\t\t},\n\t\t\t{\n\t\
+        \t\t\t\"rt\": \"119\",\n\t\t\t\t\"rtnm\": \"Michigan/119th\",\n\t\t\t\t\"\
+        rtclr\": \"#33ff00\",\n\t\t\t\t\"rtdd\": \"119\"\n\t\t\t},\n\t\t\t{\n\t\t\t\
+        \t\"rt\": \"120\",\n\t\t\t\t\"rtnm\": \"Ogilvie/Streeterville Express\",\n\
+        \t\t\t\t\"rtclr\": \"#cc66ff\",\n\t\t\t\t\"rtdd\": \"120\"\n\t\t\t},\n\t\t\
+        \t{\n\t\t\t\t\"rt\": \"121\",\n\t\t\t\t\"rtnm\": \"Union/Streeterville Express\"\
+        ,\n\t\t\t\t\"rtclr\": \"#ff6600\",\n\t\t\t\t\"rtdd\": \"121\"\n\t\t\t},\n\t\
+        \t\t{\n\t\t\t\t\"rt\": \"124\",\n\t\t\t\t\"rtnm\": \"Navy Pier\",\n\t\t\t\t\
+        \"rtclr\": \"#ff9999\",\n\t\t\t\t\"rtdd\": \"124\"\n\t\t\t},\n\t\t\t{\n\t\t\
+        \t\t\"rt\": \"125\",\n\t\t\t\t\"rtnm\": \"Water Tower Express\",\n\t\t\t\t\
+        \"rtclr\": \"#99cc33\",\n\t\t\t\t\"rtdd\": \"125\"\n\t\t\t},\n\t\t\t{\n\t\t\
+        \t\t\"rt\": \"126\",\n\t\t\t\t\"rtnm\": \"Jackson\",\n\t\t\t\t\"rtclr\": \"\
+        #6699ff\",\n\t\t\t\t\"rtdd\": \"126\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\":\
+        \ \"134\",\n\t\t\t\t\"rtnm\": \"Stockton/LaSalle Express\",\n\t\t\t\t\"rtclr\"\
+        : \"#009900\",\n\t\t\t\t\"rtdd\": \"134\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\"\
+        : \"135\",\n\t\t\t\t\"rtnm\": \"Clarendon/LaSalle Express\",\n\t\t\t\t\"rtclr\"\
+        : \"#9900cc\",\n\t\t\t\t\"rtdd\": \"135\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\"\
+        : \"136\",\n\t\t\t\t\"rtnm\": \"Sheridan/LaSalle Express\",\n\t\t\t\t\"rtclr\"\
+        : \"#cc3300\",\n\t\t\t\t\"rtdd\": \"136\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\"\
+        : \"143\",\n\t\t\t\t\"rtnm\": \"Stockton/Michigan Express\",\n\t\t\t\t\"rtclr\"\
+        : \"#006666\",\n\t\t\t\t\"rtdd\": \"143\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\"\
+        : \"146\",\n\t\t\t\t\"rtnm\": \"Inner Drive/Michigan Express\",\n\t\t\t\t\"\
+        rtclr\": \"#666600\",\n\t\t\t\t\"rtdd\": \"146\"\n\t\t\t},\n\t\t\t{\n\t\t\t\
+        \t\"rt\": \"147\",\n\t\t\t\t\"rtnm\": \"Outer Drive Express\",\n\t\t\t\t\"\
+        rtclr\": \"#ff00ff\",\n\t\t\t\t\"rtdd\": \"147\"\n\t\t\t},\n\t\t\t{\n\t\t\t\
+        \t\"rt\": \"148\",\n\t\t\t\t\"rtnm\": \"Clarendon/Michigan Express\",\n\t\t\
+        \t\t\"rtclr\": \"#66cc66\",\n\t\t\t\t\"rtdd\": \"148\"\n\t\t\t},\n\t\t\t{\n\
+        \t\t\t\t\"rt\": \"151\",\n\t\t\t\t\"rtnm\": \"Sheridan\",\n\t\t\t\t\"rtclr\"\
+        : \"#cc3366\",\n\t\t\t\t\"rtdd\": \"151\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\"\
+        : \"152\",\n\t\t\t\t\"rtnm\": \"Addison\",\n\t\t\t\t\"rtclr\": \"#33ff00\"\
+        ,\n\t\t\t\t\"rtdd\": \"152\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"155\",\n\
+        \t\t\t\t\"rtnm\": \"Devon\",\n\t\t\t\t\"rtclr\": \"#cc66ff\",\n\t\t\t\t\"\
+        rtdd\": \"155\"\n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"156\",\n\t\t\t\t\"rtnm\"\
+        : \"LaSalle\",\n\t\t\t\t\"rtclr\": \"#ff6600\",\n\t\t\t\t\"rtdd\": \"156\"\
+        \n\t\t\t},\n\t\t\t{\n\t\t\t\t\"rt\": \"157\",\n\t\t\t\t\"rtnm\": \"Streeterville/Taylor\"\
+        ,\n\t\t\t\t\"rtclr\": \"#33ccff\",\n\t\t\t\t\"rtdd\": \"157\"\n\t\t\t},\n\t\
+        \t\t{\n\t\t\t\t\"rt\": \"165\",\n\t\t\t\t\"rtnm\": \"West 65th\",\n\t\t\t\t\
+        \"rtclr\": \"#cc9966\",\n\t\t\t\t\"rtdd\": \"165\"\n\t\t\t},\n\t\t\t{\n\t\t\
+        \t\t\"rt\": \"169\",\n\t\t\t\t\"rtnm\": \"69th-UPS Express\",\n\t\t\t\t\"\
+        rtclr\": \"#99cc33\",\n\t\t\t\t\"rtdd\": \"169\"\n\t\t\t},\n\t\t\t{\n\t\t\t\
+        \t\"rt\": \"171\",\n\t\t\t\t\"rtnm\": \"U. of Chicago/Hyde Park\",\n\t\t\t\
+        \t\"rtclr\": \"#336633\",\n\t\t\t\t\"rtdd\": \"171\"\n\t\t\t},\n\t\t\t{\n\t\
+        \t\t\t\"rt\": \"172\",\n\t\t\t\t\"rtnm\": \"U. of Chicago/Kenwood\",\n\t\t\
+        \t\t\"rtclr\": \"#993366\",\n\t\t\t\t\"rtdd\": \"172\"\n\t\t\t},\n\t\t\t{\n\
+        \t\t\t\t\"rt\": \"192\",\n\t\t\t\t\"rtnm\": \"U. of Chicago Hospitals Express\"\
+        ,\n\t\t\t\t\"rtclr\": \"#cc3300\",\n\t\t\t\t\"rtdd\": \"192\"\n\t\t\t},\n\t\
+        \t\t{\n\t\t\t\t\"rt\": \"201\",\n\t\t\t\t\"rtnm\": \"Central/Ridge\",\n\t\t\
+        \t\t\"rtclr\": \"#996633\",\n\t\t\t\t\"rtdd\": \"201\"\n\t\t\t},\n\t\t\t{\n\
+        \t\t\t\t\"rt\": \"206\",\n\t\t\t\t\"rtnm\": \"Evanston Circulator\",\n\t\t\
+        \t\t\"rtclr\": \"#666600\",\n\t\t\t\t\"rtdd\": \"206\"\n\t\t\t}\n\t\t]\n\t\
+        }\n}"}
+    headers:
+      Content-Type: [application/json;charset=utf-8]
+      Date: ['Wed, 15 May 2019 04:10:25 GMT']
+      Server: [Apache-Coyote/1.1]
+      Set-Cookie: [ARPT=JKQXQLScl-ctabt-7wb02CKYKY; path=/]
+      Transfer-Encoding: [chunked]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN]
+      X-XSS-Protection: [1; mode=block]
+    status: {code: 200, message: OK}
+version: 1
