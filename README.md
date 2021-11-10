@@ -1,6 +1,6 @@
 ctaql is an experiment with [GraphQL](https://graphql.org/) to provide access to the [CTA Bus Tracker API](https://www.transitchicago.com/developers/bustracker/)
 
-see it in action at [https://ctaql.cc](https://ctaql.cc/#query=%7B%0A%20%20route(number%3A%20%2274%22)%20%7B%0A%20%20%20%20number%0A%20%20%20%20name%0A%20%20%20%20vehicles%20%7B%0A%20%20%20%20%20%20number%0A%20%20%20%20%20%20destination%0A%20%20%20%20%20%20heading%0A%20%20%20%20%20%20latitude%0A%20%20%20%20%20%20longitude%0A%20%20%20%20%7D%20%20%20%20%0A%20%20%20%20directions%20%7B%0A%20%20%20%20%20%20direction%0A%20%20%20%20%7D%0A%20%20%20%20stops%20%7B%0A%20%20%20%20%20%20number%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20latitude%0A%20%20%20%20%20%20longitude%0A%20%20%20%20%20%20direction%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D)
+see it in action at [https://ctaql.cc](https://ctaql.cc/#query=%7B%0A%20%20route(number%3A%20%22151%22)%20%7B%0A%20%20%20%20number%0A%20%20%20%20name%0A%20%20%20%20vehicles%20%7B%0A%20%20%20%20%20%20number%0A%20%20%20%20%20%20destination%0A%20%20%20%20%20%20heading%0A%20%20%20%20%20%20latitude%0A%20%20%20%20%20%20longitude%0A%20%20%20%20%7D%20%20%20%20%0A%20%20%20%20directions%20%7B%0A%20%20%20%20%20%20direction%0A%20%20%20%20%7D%0A%20%20%20%20stops%20%7B%0A%20%20%20%20%20%20number%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20latitude%0A%20%20%20%20%20%20longitude%0A%20%20%20%20%20%20direction%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D)
 
 <br>
 
