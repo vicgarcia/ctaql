@@ -144,7 +144,6 @@ class ArrivalsRouteVehicleType(graphene.ObjectType):
     number = graphene.String(description="vehicle number")
     destination = graphene.String(description="vehicle destination")
 
-
     @classmethod
     def from_api_data(cls, data):
         return cls(
@@ -214,5 +213,6 @@ class Query(graphene.ObjectType):
 
     class Meta:
         description = 'cta bustracker\n\nhttps://github.com/vicgarcia/ctaql'
+
 
 schema = graphene.Schema(query=Query)

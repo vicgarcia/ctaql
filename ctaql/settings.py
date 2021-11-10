@@ -6,7 +6,7 @@ class base(configuration):
 
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-    SECRET_KEY = os.environ.get('SECRET_KEY')
+    SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
     DEBUG = False
 
@@ -75,12 +75,12 @@ class base(configuration):
         'DEFAULT_PERMISSION_CLASSES': (),
         'DEFAULT_PARSER_CLASSES': ('rest_framework.parsers.JSONParser',),
         'DEFAULT_RENDERER_CLASSES': ('rest_framework.renderers.JSONRenderer',),
-        'DATETIME_FORMAT': "%Y-%m-%d %H:%M:%S",
+        'DATETIME_FORMAT': '%Y-%m-%d %H:%M:%S',
         'UNAUTHENTICATED_USER': None,
     }
 
     GRAPHENE = {
-        "SCHEMA": "bustracker.schema.schema"
+        'SCHEMA': 'bustracker.schema.schema'
     }
 
     CTA_BUSTRACKER_API_KEY = os.environ.get('CTA_BUSTRACKER_API_KEY')
@@ -88,16 +88,14 @@ class base(configuration):
 
 class production(base):
 
-    STATIC_ROOT = os.path.join(base.BASE_DIR, 'static')
 
-    CACHES = {
-        "default": {
-            "BACKEND": "django_redis.cache.RedisCache",
-            "LOCATION": "redis://127.0.0.1:6379/2",
-            "KEY_PREFIX": "ctaql",
-        }
-    }
-
+    # CACHES = {
+    #     'default': {
+    #         'BACKEND': 'django_redis.cache.RedisCache',
+    #         'LOCATION': os.environ.get('CTAQL_REDIS_CONNECTION'),
+    #         'KEY_PREFIX': 'ctaql',
+    #     }
+    # }
 
 class development(base):
 
@@ -127,7 +125,3 @@ class development(base):
             }
         }
     }
-
-
-class local(development):
-    pass
