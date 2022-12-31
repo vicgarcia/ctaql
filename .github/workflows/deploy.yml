@@ -1,0 +1,63 @@
+name: ctaql-deploy
+
+on:
+  workflow_dispatch:
+    branches:
+      - main
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Log in to the Container registry
+      uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
+      with:
+        registry: ${{ env.REGISTRY }}
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Build and push
+      uses: docker/build-push-action@v3
+      with:
+        push: true
+        tags: vicgarcia/ctaql:latest
+
+    # - name: Build Base Container
+    #   run: |
+    #     docker build vicg4rcia/ctaql-build --target=build --progress=plain .
+
+    # - name: Run Unit Tests
+    #   run: |
+    #     docker build vicg4rcia/ctaql-test --target=test --progress=plain .
+    #     docker run --user 0:0 -it vicg4rcia/ctaql-test pipenv run pytest
+
+    # - name: Build Production Container
+    #   run: |
+    #     docker build vicg4rcia/ctaql --target production --progress=plain .
+    #     docker login
+    #     docker push vicg4rcia/ctaql:${{ github.sha }}
+    #     docker push vicg4rcia/ctaql:latest
+
+    # - name: Deploy Production Container
+    #   env:
+    #     DOCKER_HOST: ${{ secrets.DOCKER_HOST }}
+    #     CTA_BUSTRACKER_API_KEY: ${{ secrets.CTA_BUSTRACKER_API_KEY }}
+    #     DJANGO_SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}
+    #   run: |
+    #     docker -H $DOCKER_HOST stop ctaql || true
+    #     docker -H $DOCKER_HOST rm ctaql || true
+    #     docker -H $DOCKER_HOST pull vicg4rcia/ctaql:latest
+    #     docker -H $DOCKER_HOST run -d \
+    #       --env CTA_BUSTRACKER_API_KEY=$CTA_BUSTRACKER_API_KEY \
+    #       --env DJANGO_SECRET_KEY=$DJANGO_SECRET_KEY \
+    #       --publish 8001:8000 \
+    #       --restart always \
+    #       --name ctaql vicg4rcia/ctaql:latest
