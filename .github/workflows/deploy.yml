@@ -14,21 +14,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Repository
+    - name: checkout repo
       uses: actions/checkout@v3
 
-    - name: Log in to the Container registry
-      uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
+    - name: login to ghcr.io
+      uses: docker/login-action@v2
       with:
         registry: ${{ env.REGISTRY }}
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Build and push
+    - name: build container
       uses: docker/build-push-action@v3
       with:
-        push: true
+        target: production
         tags: vicgarcia/ctaql:latest
+        push: true
 
     # - name: Build Base Container
     #   run: |
