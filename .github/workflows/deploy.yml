@@ -28,7 +28,7 @@ jobs:
       uses: docker/build-push-action@v3
       with:
         target: production
-        tags: vicgarcia/ctaql:latest
+        tags: ghcr.io/vicgarcia/ctaql:latest
         push: true
 
     # - name: Build Base Container
