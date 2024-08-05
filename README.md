@@ -1,8 +1,8 @@
-ctaql is an experiment with [GraphQL](https://graphql.org/) to provide access to the [CTA Bus Tracker API](https://www.transitchicago.com/developers/bustracker/). [Graphene-Django](https://docs.graphene-python.org/projects/django/en/latest/) is used to define a schema that describes the data and implement the query logic to retrieve the [bustracker](https://github.com/vicgarcia/bustracker) data.
+ctaql is an experiment with [GraphQL](https://graphql.org/) to provide access to the [CTA Bus Tracker](https://www.transitchicago.com/developers/bustracker/) API. [Graphene-Django](https://docs.graphene-python.org/projects/django/en/latest/) is used to define a schema that describes the data and implement the query logic to retrieve the [bustracker](https://github.com/vicgarcia/bustracker) data.
 
 ### see it in action at [https://ctaql.rockst4r.net](https://ctaql.rockst4r.net/#query=%7B%0A%20%20route(number%3A%20%22151%22)%20%7B%0A%20%20%20%20number%0A%20%20%20%20name%0A%20%20%20%20vehicles%20%7B%0A%20%20%20%20%20%20number%0A%20%20%20%20%20%20destination%0A%20%20%20%20%20%20heading%0A%20%20%20%20%20%20latitude%0A%20%20%20%20%20%20longitude%0A%20%20%20%20%7D%20%20%20%20%0A%20%20%20%20directions%20%7B%0A%20%20%20%20%20%20direction%0A%20%20%20%20%7D%0A%20%20%20%20stops%20%7B%0A%20%20%20%20%20%20number%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20latitude%0A%20%20%20%20%20%20longitude%0A%20%20%20%20%20%20direction%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D)
 
-try running these queries
+example queries
 
 **get list of all bus routes**
 ```
@@ -202,9 +202,7 @@ output
 }
 ```
 
-<br />
-
-### development
+### run the code
 
 clone the repository
 ```
@@ -224,11 +222,11 @@ docker-compose build
 docker-compose up
 ```
 
-use GraphiQL to interact at [http://0.0.0.0:8000/graphql/](http://0.0.0.0:8000/graphql/)
+use GraphiQL to interact at [http://localhost:8000/graphql/](http://localhost:8000/graphql/)
 
 get a shell inside the running docker container
 ```
-docker-compose exec ctaql-django-local sh
+docker-compose exec ctaql-django-local bash
 ```
 
 run manage.py inside the docker container
