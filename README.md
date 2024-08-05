@@ -222,15 +222,4 @@ docker-compose build
 docker-compose up
 ```
 
-use GraphiQL to interact at [http://localhost:8000/graphql/](http://localhost:8000/graphql/)
-
-get a shell inside the running docker container
-```
-docker-compose exec ctaql-django-local bash
-```
-
-run manage.py inside the docker container
-```
-cd /code
-pipenv run python manage.py <arguments here>
-```
+use the running GraphiQL UI at [http://localhost:8000/graphql/](http://localhost:8000/graphql/)
