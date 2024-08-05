@@ -1,22 +1,21 @@
-ctaql is an experiment with [GraphQL](https://graphql.org/) to provide access to the [CTA Bus Tracker API](https://www.transitchicago.com/developers/bustracker/)
+ctaql is an experiment with [GraphQL](https://graphql.org/) to provide access to the [CTA Bus Tracker API](https://www.transitchicago.com/developers/bustracker/). [Graphene-Django](https://docs.graphene-python.org/projects/django/en/latest/) is used to define a schema that describes the data and implement the query logic to retrieve the [bustracker](https://github.com/vicgarcia/bustracker) data.
 
-see it in action at [https://ctaql.rockst4r.net](https://ctaql.rockst4r.net/#query=%7B%0A%20%20route(number%3A%20%22151%22)%20%7B%0A%20%20%20%20number%0A%20%20%20%20name%0A%20%20%20%20vehicles%20%7B%0A%20%20%20%20%20%20number%0A%20%20%20%20%20%20destination%0A%20%20%20%20%20%20heading%0A%20%20%20%20%20%20latitude%0A%20%20%20%20%20%20longitude%0A%20%20%20%20%7D%20%20%20%20%0A%20%20%20%20directions%20%7B%0A%20%20%20%20%20%20direction%0A%20%20%20%20%7D%0A%20%20%20%20stops%20%7B%0A%20%20%20%20%20%20number%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20latitude%0A%20%20%20%20%20%20longitude%0A%20%20%20%20%20%20direction%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D)
+### see it in action at [https://ctaql.rockst4r.net](https://ctaql.rockst4r.net/#query=%7B%0A%20%20route(number%3A%20%22151%22)%20%7B%0A%20%20%20%20number%0A%20%20%20%20name%0A%20%20%20%20vehicles%20%7B%0A%20%20%20%20%20%20number%0A%20%20%20%20%20%20destination%0A%20%20%20%20%20%20heading%0A%20%20%20%20%20%20latitude%0A%20%20%20%20%20%20longitude%0A%20%20%20%20%7D%20%20%20%20%0A%20%20%20%20directions%20%7B%0A%20%20%20%20%20%20direction%0A%20%20%20%20%7D%0A%20%20%20%20stops%20%7B%0A%20%20%20%20%20%20number%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20latitude%0A%20%20%20%20%20%20longitude%0A%20%20%20%20%20%20direction%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D)
 
-<br>
+try running these queries
 
-get list of all bus routes
+**get list of all bus routes**
 ```
-query :
-
 {
   routes {
     name
     number
   }
 }
+```
 
-output :
-
+output
+```
 {
   "data": {
     "routes": [
@@ -34,10 +33,8 @@ output :
 }
 ```
 
-get stops for a bus route
+**get stops for a bus route**
 ```
-query :
-
 {
   route(number:"92") {
     number
@@ -51,9 +48,10 @@ query :
     }
   }
 }
+```
 
-output :
-
+output
+```
 {
   "data": {
     "route": {
@@ -81,10 +79,8 @@ output :
 }
 ```
 
-get arrival times for a stop
+**get arrival times for a stop**
 ```
-query :
-
 {
   arrivals(stop:"1926") {
     route {
@@ -99,9 +95,10 @@ query :
     time
   }
 }
+```
 
-output :
-
+output
+```
 {
   "data": {
     "arrivals": [
@@ -122,10 +119,8 @@ output :
 }
 ```
 
-get vehicles on a route
+**get vehicles on a route**
 ```
-query :
-
 {
   route(number: "151") {
     vehicles {
@@ -137,9 +132,10 @@ query :
     }
   }
 }
+```
 
-output :
-
+output
+```
 {
   "data": {
     "route": {
@@ -165,10 +161,8 @@ output :
 }
 ```
 
-get predictions for a vehicle
+**get predictions for a vehicle**
 ```
-query :
-
 {
   arrivals(vehicle: "1819") {
     stop {
@@ -179,9 +173,10 @@ query :
     time
   }
 }
+```
 
-output :
-
+output
+```
 {
   "data": {
     "arrivals": [
@@ -208,6 +203,8 @@ output :
 ```
 
 <br />
+
+### development
 
 clone the repository
 ```
